@@ -4,6 +4,7 @@
     "id"            : "gameCanvas",
     "renderMode"    : 1,
     "jsList"        : [
-        "src/main.js"
+        "src/main.js",
+		"src/Component.js"
     ]
 }
