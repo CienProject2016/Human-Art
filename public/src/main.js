@@ -1,5 +1,5 @@
 var g_mainmenu = [
-    "res/colorbg.jpg", "res/minion.png"
+    "res/HelloWorld.png", "res/01.png", "res/Hero.json"
 ]
 var GameLayer = cc.Layer.extend({
     ctor: function () {
@@ -14,11 +14,24 @@ var GameLayer = cc.Layer.extend({
         bgSprite.setPosition(size.width / 2, size.height / 2);
         bgSprite.setScale(1.0);
         this.addChild(bgSprite, 0);
-        
+
         var minionSprite = cc.Sprite.create("res/minion.png");
         cc.eventManager.addListener(minionListener, minionSprite);
         this.addChild(minionSprite, 1);
-  
+
+        var animatingMinion = ccs.load("res/Hero.json");
+        var action = animatingMinion.action;
+        if (action) {
+            animatingMinion.node.runAction(action);
+            animatingMinion.node.attr({
+                scale: 1,
+                x: size.width / 2,
+                y: size.height / 2,
+            });
+            action.gotoFrameAndPlay(0, true);
+        }
+        this.addChild(animatingMinion.node);
+
         var label = cc.LabelTTF.create("Hello World", "Arial", 40);
         label.setPosition(size.width / 2, size.height / 2);
         this.addChild(label, 1);
@@ -67,7 +80,7 @@ window.onload = function () {
         cc.view.adjustViewPort(false);
 
         cc.view.resizeWithBrowserSize(true);
-        var policy = new cc.ResolutionPolicy(cc.ContainerStrategy.EQUAL_TO_FRAME, cc.ContentStrategy.SHOW_ALL   );
+        var policy = new cc.ResolutionPolicy(cc.ContainerStrategy.EQUAL_TO_FRAME, cc.ContentStrategy.SHOW_ALL);
         cc.view.setDesignResolutionSize(1920, 1080, policy)
         //load resources
         cc.LoaderScene.preload(g_mainmenu, function () {
