@@ -1,6 +1,7 @@
 var g_mainmenu = [
-    "res/HelloWorld.png", "res/01.png", "res/Hero.json"
+    "res/HelloWorld.png", "res/Hero.json"
 ]
+
 var GameLayer = cc.Layer.extend({
     ctor: function () {
         this._super();
@@ -15,28 +16,18 @@ var GameLayer = cc.Layer.extend({
         bgSprite.setScale(1.0);
         this.addChild(bgSprite, 0);
 
-        var minionSprite = cc.Sprite.create("res/minion.png");
-        cc.eventManager.addListener(minionListener, minionSprite);
-        this.addChild(minionSprite, 1);
-
-        var animatingMinion = ccs.load("res/Hero.json");
-        var action = animatingMinion.action;
-        if (action) {
-            animatingMinion.node.runAction(action);
-            animatingMinion.node.attr({
-                scale: 1,
-                x: size.width / 2,
-                y: size.height / 2,
-            });
-            action.gotoFrameAndPlay(0, true);
+        var component = new Component("Hero");
+        if (component.childrenCount != 0) {
+            cc.eventManager.addListener(minionListener, component);
+            console.log(component.getContentSize());
+            this.addChild(component);
         }
-        this.addChild(animatingMinion.node);
 
         var label = cc.LabelTTF.create("Hello World", "Arial", 40);
         label.setPosition(size.width / 2, size.height / 2);
         this.addChild(label, 1);
-
     },
+
     onEnter: function () {
         this._super();
 
