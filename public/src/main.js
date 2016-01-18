@@ -1,6 +1,7 @@
 var g_mainmenu = [
     "res/HelloWorld.png", "res/Hero.json"
 ]
+
 var GameLayer = cc.Layer.extend({
     ctor: function () {
         this._super();
@@ -13,17 +14,20 @@ var GameLayer = cc.Layer.extend({
         var bgSprite = cc.Sprite.create("res/colorbg.jpg");
         bgSprite.setPosition(size.width / 2, size.height / 2);
         bgSprite.setScale(1.0);
-        this.addChild(bgSprite, 0);        
+        this.addChild(bgSprite, 0);
 
-        var component = new Component();
-        this.addChild(component);
-        cc.eventManager.addListener(minionListener, component);
+        var component = new Component("Hero");
+        if (component.childrenCount != 0) {
+            cc.eventManager.addListener(minionListener, component);
+            console.log(component.getContentSize());
+            this.addChild(component);
+        }
+
         var label = cc.LabelTTF.create("Hello World", "Arial", 40);
         label.setPosition(size.width / 2, size.height / 2);
         this.addChild(label, 1);
-
     },
-    
+
     onEnter: function () {
         this._super();
 
