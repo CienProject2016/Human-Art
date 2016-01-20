@@ -13,7 +13,7 @@ var GameLayer = cc.Layer.extend({
         var bgSprite = cc.Sprite.create("res/colorbg.jpg");
         bgSprite.setPosition(size.width / 2, size.height / 2);
         bgSprite.setScale(1.0);
-        this.addChild(bgSprite, 0);        
+        this.addChild(bgSprite, 0);
 
         var component = new Component();
         this.addChild(component);
@@ -21,9 +21,28 @@ var GameLayer = cc.Layer.extend({
         var label = cc.LabelTTF.create("Hello World", "Arial", 40);
         label.setPosition(size.width / 2, size.height / 2);
         this.addChild(label, 1);
+        
+        //////
+        this.my_sprite = cc.Sprite.create("res/minion.png"); 
+        this.my_sprite.setPosition(cc.p(size.width/4 , size.height / 4)); // 스프라이트  포지션  오른쪽 아래로
+        this.addChild(this.my_sprite);
+        
+        var movetoright = cc.MoveBy.create(1, cc.p(size.width - this.my_sprite.getPosition().x, 0)); //스프라이트 윈도우 사이즈 - 스프라이트 포지션 만큼 오른쪽으로 움직임 
+        this.my_sprite.runAction(movetoright);
+        var movetoleft = cc.MoveBy.create(1, cc.p(-size.width, 0)); //스프라이트 윈도사이즈 만큼 왼쪽으로 움직임 
+        var movetoorigin = cc.MoveBy.create(1, cc.p(this.my_sprite.getPosition().x, 0)); //스프라이트 포지션만큼 오른쪽으로 움직임 
+        var sequence = cc.Sequence.create(movetoright, movetoleft, movetoorigin); //무브투 3개 합친 시퀀스 
 
-    },
+        this.my_sprite.runAction(sequence).repeatForever();
+
+        ///////
+
     
+    
+        
+    },
+
+
     onEnter: function () {
         this._super();
 
