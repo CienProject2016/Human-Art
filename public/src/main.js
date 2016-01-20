@@ -16,7 +16,7 @@ var GameLayer = cc.Layer.extend({
         bgSprite.setScale(1.0);
         this.addChild(bgSprite, 0);
 
-        var component = new Component("Hero");
+        var component = new Component("Hero"); // coponent.js 로 이동.
         if (component.childrenCount != 0) {
             cc.eventManager.addListener(minionListener, component);
             console.log(component.getContentSize());
