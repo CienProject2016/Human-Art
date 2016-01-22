@@ -6,6 +6,7 @@
     "jsList"        : [
         "src/main.js",
 		"src/Component.js",
-		"src/Board.js"
+		"src/Board.js",
+		"src/User.js"
     ]
 }

@@ -1,12 +1,18 @@
 var Board = cc.Layer.extend({
-    ctor: function () {
+    id:null,
+    name:null,
+    componentList:[],
+    userList:[],
+    ctor: function (boardId) {
         this._super();
-        this.init();
+        this.init(boardId);
     },
-    init: function () {
+    init: function (boardId) {
+        this.id = boardId;
         this._super();
         var size = cc.director.getWinSize();
-
+        console.log("boardId : ")
+        console.log(this.id);
         var bgSprite = cc.Sprite.create("res/colorbg.jpg");
         bgSprite.setPosition(size.width / 2, size.height / 2);
         bgSprite.setScale(1.0);
@@ -65,9 +71,9 @@ var Board = cc.Layer.extend({
     }
 });
 
-Board.scene = function () {
+Board.scene = function (boardId) {
     var scene = new cc.Scene;
-    var board = new Board();
+    var board = new Board(boardId);
     scene.addChild(board);
 
     return scene;
