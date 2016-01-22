@@ -82,7 +82,7 @@ window.onload = function () {
         cc.view.adjustViewPort(false);
 
         cc.view.resizeWithBrowserSize(true);
-        var policy = new cc.ResolutionPolicy(cc.ContainerStrategy.EQUAL_TO_FRAME, cc.ContentStrategy.SHOW_ALL);
+        var policy = new cc.ResolutionPolicy(cc.ContainerStrategy.PROPORTION_TO_FRAME, cc.ContentStrategy.FIXED_WIDTH);
         cc.view.setDesignResolutionSize(1920, 1080, policy)
         //load resources
         cc.LoaderScene.preload(g_mainmenu, function () {
