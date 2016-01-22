@@ -7,23 +7,15 @@
       "Animation": {
         "Duration": 15,
         "Speed": 0.4,
+        "ActivedAnimationName": "animation0",
         "Timelines": [
           {
-            "ActionTag": 822903284,
+            "ActionTag": 1906323727,
             "Property": "Position",
             "Frames": [
               {
-                "X": 56.0251,
-                "Y": -57.2216,
-                "FrameIndex": 0,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "PointFrameData"
-              },
-              {
-                "X": 53.7268,
-                "Y": -41.1318,
+                "X": 145.6083,
+                "Y": 1.7564,
                 "FrameIndex": 5,
                 "EasingData": {
                   "Type": 0
@@ -31,8 +23,8 @@
                 "ctype": "PointFrameData"
               },
               {
-                "X": 53.7268,
-                "Y": -41.1318,
+                "X": 149.0418,
+                "Y": -3.56,
                 "FrameIndex": 15,
                 "EasingData": {
                   "Type": 0
@@ -43,7 +35,100 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": 822903284,
+            "ActionTag": 1906323727,
+            "Property": "Scale",
+            "Frames": [
+              {
+                "X": 1.0,
+                "Y": 1.0,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 1.0,
+                "Y": 1.0,
+                "FrameIndex": 15,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1906323727,
+            "Property": "RotationSkew",
+            "Frames": [
+              {
+                "X": -497.8526,
+                "Y": 222.1467,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": -497.8526,
+                "Y": 222.1467,
+                "FrameIndex": 15,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1201444759,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": 205.6895,
+                "Y": -110.6773,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 197.7523,
+                "Y": -98.249,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 205.6895,
+                "Y": -110.6773,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 197.7523,
+                "Y": -98.249,
+                "FrameIndex": 15,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 1201444759,
             "Property": "Scale",
             "Frames": [
               {
@@ -67,40 +152,6 @@
               {
                 "X": 1.0,
                 "Y": 1.0,
-                "FrameIndex": 15,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              }
-            ],
-            "ctype": "TimelineData"
-          },
-          {
-            "ActionTag": 822903284,
-            "Property": "RotationSkew",
-            "Frames": [
-              {
-                "X": 5.9632,
-                "Y": 5.9632,
-                "FrameIndex": 0,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": -31.8816,
-                "Y": -31.8816,
-                "FrameIndex": 5,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": -26.225,
-                "Y": -26.225,
                 "FrameIndex": 10,
                 "EasingData": {
                   "Type": 0
@@ -108,74 +159,6 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": 10.0422,
-                "Y": 10.0422,
-                "FrameIndex": 15,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              }
-            ],
-            "ctype": "TimelineData"
-          },
-          {
-            "ActionTag": -1572582564,
-            "Property": "Position",
-            "Frames": [
-              {
-                "X": 111.7504,
-                "Y": 18.9532,
-                "FrameIndex": 0,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "PointFrameData"
-              },
-              {
-                "X": 111.7504,
-                "Y": 18.9532,
-                "FrameIndex": 5,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "PointFrameData"
-              },
-              {
-                "X": 111.7504,
-                "Y": 18.9532,
-                "FrameIndex": 15,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "PointFrameData"
-              }
-            ],
-            "ctype": "TimelineData"
-          },
-          {
-            "ActionTag": -1572582564,
-            "Property": "Scale",
-            "Frames": [
-              {
-                "X": 1.0,
-                "Y": 1.0,
-                "FrameIndex": 0,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": 1.0,
-                "Y": 1.0,
-                "FrameIndex": 5,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
                 "X": 1.0,
                 "Y": 1.0,
                 "FrameIndex": 15,
@@ -188,12 +171,12 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": -1572582564,
+            "ActionTag": 1201444759,
             "Property": "RotationSkew",
             "Frames": [
               {
-                "X": 3.3978,
-                "Y": 3.3978,
+                "X": 62.1164,
+                "Y": 62.1164,
                 "FrameIndex": 0,
                 "EasingData": {
                   "Type": 0
@@ -201,8 +184,8 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": -23.7808,
-                "Y": -23.7808,
+                "X": 134.8368,
+                "Y": 134.8368,
                 "FrameIndex": 5,
                 "EasingData": {
                   "Type": 0
@@ -210,8 +193,8 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": -10.328,
-                "Y": -10.328,
+                "X": 62.1164,
+                "Y": 62.1164,
                 "FrameIndex": 10,
                 "EasingData": {
                   "Type": 0
@@ -219,8 +202,8 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": -69.7,
-                "Y": -69.7,
+                "X": 134.8368,
+                "Y": 134.8368,
                 "FrameIndex": 15,
                 "EasingData": {
                   "Type": 0
@@ -231,12 +214,12 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": -1350929873,
+            "ActionTag": 517699101,
             "Property": "Position",
             "Frames": [
               {
-                "X": 19.4377,
-                "Y": 82.1207,
+                "X": 203.6051,
+                "Y": 74.6754,
                 "FrameIndex": 0,
                 "EasingData": {
                   "Type": 0
@@ -244,8 +227,8 @@
                 "ctype": "PointFrameData"
               },
               {
-                "X": 19.4377,
-                "Y": 82.1207,
+                "X": 203.6051,
+                "Y": 74.6754,
                 "FrameIndex": 5,
                 "EasingData": {
                   "Type": 0
@@ -253,8 +236,17 @@
                 "ctype": "PointFrameData"
               },
               {
-                "X": 19.4377,
-                "Y": 82.1207,
+                "X": 203.6051,
+                "Y": 74.6754,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 203.6051,
+                "Y": 74.6754,
                 "FrameIndex": 15,
                 "EasingData": {
                   "Type": 0
@@ -265,7 +257,7 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": -1350929873,
+            "ActionTag": 517699101,
             "Property": "Scale",
             "Frames": [
               {
@@ -289,142 +281,6 @@
               {
                 "X": 1.0,
                 "Y": 1.0,
-                "FrameIndex": 15,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              }
-            ],
-            "ctype": "TimelineData"
-          },
-          {
-            "ActionTag": -1350929873,
-            "Property": "RotationSkew",
-            "Frames": [
-              {
-                "X": -1.0382,
-                "Y": -1.0382,
-                "FrameIndex": 0,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": -1.0382,
-                "Y": -1.0382,
-                "FrameIndex": 5,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": 6.7298,
-                "Y": 6.7298,
-                "FrameIndex": 15,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              }
-            ],
-            "ctype": "TimelineData"
-          },
-          {
-            "ActionTag": 1623591126,
-            "Property": "Position",
-            "Frames": [
-              {
-                "X": -96.9465,
-                "Y": 22.1914,
-                "FrameIndex": 0,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "PointFrameData"
-              },
-              {
-                "X": -138.3185,
-                "Y": 45.1765,
-                "FrameIndex": 5,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "PointFrameData"
-              },
-              {
-                "X": -110.7336,
-                "Y": 12.9976,
-                "FrameIndex": 15,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "PointFrameData"
-              }
-            ],
-            "ctype": "TimelineData"
-          },
-          {
-            "ActionTag": 1623591126,
-            "Property": "Scale",
-            "Frames": [
-              {
-                "X": 1.0,
-                "Y": 1.0,
-                "FrameIndex": 0,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": 1.0,
-                "Y": 1.0,
-                "FrameIndex": 5,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": 1.0,
-                "Y": 1.0,
-                "FrameIndex": 15,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              }
-            ],
-            "ctype": "TimelineData"
-          },
-          {
-            "ActionTag": 1623591126,
-            "Property": "RotationSkew",
-            "Frames": [
-              {
-                "X": 0.0,
-                "Y": 0.0,
-                "FrameIndex": 0,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": 77.4096,
-                "Y": 77.4096,
-                "FrameIndex": 5,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": 12.7497,
-                "Y": 12.7497,
                 "FrameIndex": 10,
                 "EasingData": {
                   "Type": 0
@@ -432,8 +288,8 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": 12.7497,
-                "Y": 12.7497,
+                "X": 1.0,
+                "Y": 1.0,
                 "FrameIndex": 15,
                 "EasingData": {
                   "Type": 0
@@ -444,12 +300,55 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": 775001319,
+            "ActionTag": 517699101,
+            "Property": "RotationSkew",
+            "Frames": [
+              {
+                "X": -124.0934,
+                "Y": -124.0934,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": -65.6906,
+                "Y": -65.6906,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": -124.0934,
+                "Y": -124.0934,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": -65.6906,
+                "Y": -65.6906,
+                "FrameIndex": 15,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1107108323,
             "Property": "Position",
             "Frames": [
               {
-                "X": -40.56,
-                "Y": -60.2787,
+                "X": 356.8796,
+                "Y": -60.0526,
                 "FrameIndex": 0,
                 "EasingData": {
                   "Type": 0
@@ -457,8 +356,8 @@
                 "ctype": "PointFrameData"
               },
               {
-                "X": -40.56,
-                "Y": -60.2787,
+                "X": 356.8796,
+                "Y": -60.0526,
                 "FrameIndex": 5,
                 "EasingData": {
                   "Type": 0
@@ -466,8 +365,17 @@
                 "ctype": "PointFrameData"
               },
               {
-                "X": -40.56,
-                "Y": -60.2787,
+                "X": 356.8796,
+                "Y": -60.0526,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 356.8796,
+                "Y": -60.0526,
                 "FrameIndex": 15,
                 "EasingData": {
                   "Type": 0
@@ -478,7 +386,7 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": 775001319,
+            "ActionTag": -1107108323,
             "Property": "Scale",
             "Frames": [
               {
@@ -502,6 +410,15 @@
               {
                 "X": 1.0,
                 "Y": 1.0,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 1.0,
+                "Y": 1.0,
                 "FrameIndex": 15,
                 "EasingData": {
                   "Type": 0
@@ -512,12 +429,12 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": 775001319,
+            "ActionTag": -1107108323,
             "Property": "RotationSkew",
             "Frames": [
               {
-                "X": 359.5355,
-                "Y": 359.5355,
+                "X": -698.2682,
+                "Y": -698.2682,
                 "FrameIndex": 0,
                 "EasingData": {
                   "Type": 0
@@ -525,8 +442,8 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": 396.9416,
-                "Y": 396.9416,
+                "X": -717.3201,
+                "Y": -717.3201,
                 "FrameIndex": 5,
                 "EasingData": {
                   "Type": 0
@@ -534,8 +451,8 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": 382.7508,
-                "Y": 382.7508,
+                "X": -698.2682,
+                "Y": -698.2682,
                 "FrameIndex": 10,
                 "EasingData": {
                   "Type": 0
@@ -543,9 +460,213 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": 403.3069,
-                "Y": 403.3069,
+                "X": -717.3201,
+                "Y": -717.3201,
                 "FrameIndex": 15,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 572970226,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": 342.0918,
+                "Y": 36.4134,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 342.0918,
+                "Y": 36.4134,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 342.0918,
+                "Y": 36.4134,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 342.0918,
+                "Y": 36.4134,
+                "FrameIndex": 15,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 572970226,
+            "Property": "Scale",
+            "Frames": [
+              {
+                "X": 1.0,
+                "Y": 1.0,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 1.0,
+                "Y": 1.0,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 1.0,
+                "Y": 1.0,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 1.0,
+                "Y": 1.0,
+                "FrameIndex": 15,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": 572970226,
+            "Property": "RotationSkew",
+            "Frames": [
+              {
+                "X": -76.3888,
+                "Y": -76.3888,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": -24.6418,
+                "Y": -24.6418,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": -76.3888,
+                "Y": -76.3888,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": -24.6418,
+                "Y": -24.6418,
+                "FrameIndex": 15,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1111193388,
+            "Property": "Position",
+            "Frames": [
+              {
+                "X": 241.0109,
+                "Y": 516.9576,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": 241.0109,
+                "Y": 516.9576,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1111193388,
+            "Property": "Scale",
+            "Frames": [
+              {
+                "X": 1.0,
+                "Y": 1.0,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 1.0,
+                "Y": 1.0,
+                "FrameIndex": 10,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              }
+            ],
+            "ctype": "TimelineData"
+          },
+          {
+            "ActionTag": -1111193388,
+            "Property": "RotationSkew",
+            "Frames": [
+              {
+                "X": 88.8876,
+                "Y": 88.8876,
+                "FrameIndex": 0,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 88.8876,
+                "Y": 88.8876,
+                "FrameIndex": 10,
                 "EasingData": {
                   "Type": 0
                 },
@@ -557,7 +678,14 @@
         ],
         "ctype": "TimelineActionData"
       },
-      "AnimationList": [],
+      "AnimationList": [
+        {
+          "StartIndex": 0,
+          "EndIndex": 15,
+          "Name": "animation0",
+          "ctype": "AnimationInfoData"
+        }
+      ],
       "ObjectData": {
         "Length": 20.0,
         "Position": {
@@ -575,238 +703,369 @@
         },
         "Children": [
           {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "minions_0000 (1).png",
-              "Plist": ""
-            },
-            "BlendFunc": {
-              "Src": 770,
-              "Dst": 771
-            },
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 1.0
-            },
+            "Length": 338.0,
             "Position": {
-              "X": 53.7268,
-              "Y": -41.1318
+              "X": 241.0109,
+              "Y": 516.9576
             },
             "Scale": {
               "ScaleX": 1.0,
               "ScaleY": 1.0
             },
-            "RotationSkewX": 10.0422,
-            "RotationSkewY": 10.0422,
+            "RotationSkewX": 88.8876,
+            "RotationSkewY": 88.8876,
             "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": 21.7268,
-            "RightMargin": -85.7268,
-            "TopMargin": 41.1318,
-            "BottomMargin": -210.1318,
-            "Tag": 32,
-            "ActionTag": 822903284,
-            "Size": {
-              "X": 64.0,
-              "Y": 169.0
-            },
-            "Name": "Sprite_1",
-            "ctype": "SpriteObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "minions_0000 (2).png",
-              "Plist": ""
-            },
             "BlendFunc": {
               "Src": 770,
               "Dst": 771
             },
-            "AnchorPoint": {
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 111.7504,
-              "Y": 18.9532
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "RotationSkewX": -69.7,
-            "RotationSkewY": -69.7,
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": 111.7504,
-            "RightMargin": -246.7504,
-            "TopMargin": -66.4532,
-            "BottomMargin": -28.5468,
-            "Tag": 33,
-            "ActionTag": -1572582564,
+            "Tag": 64,
+            "Children": [
+              {
+                "Length": 232.0,
+                "Position": {
+                  "X": 199.3397,
+                  "Y": -100.7347
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "RotationSkewX": 120.2927,
+                "RotationSkewY": 120.2927,
+                "CColor": {},
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "Tag": 68,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "test_minion_r_arm.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 145.9517,
+                      "Y": 1.2248
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "RotationSkewX": -497.8526,
+                    "RotationSkewY": 222.1467,
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 145.9517,
+                    "RightMargin": -245.9517,
+                    "TopMargin": -103.2248,
+                    "BottomMargin": 1.2248,
+                    "Tag": 76,
+                    "ActionTag": 1906323727,
+                    "Size": {
+                      "X": 100.0,
+                      "Y": 102.0
+                    },
+                    "Name": "L_A",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 1201444759,
+                "ZOrder": 29,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "Bone_29",
+                "ctype": "BoneNodeObjectData"
+              },
+              {
+                "Length": 258.0,
+                "Position": {
+                  "X": 203.6051,
+                  "Y": 74.6754
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "RotationSkewX": -77.3712,
+                "RotationSkewY": -77.3712,
+                "CColor": {},
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "Tag": 69,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "test_minion_l_leg.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 49.8214,
+                      "Y": -69.71
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "RotationSkewX": -23.3735,
+                    "RotationSkewY": -23.3735,
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 49.8214,
+                    "RightMargin": -184.8214,
+                    "TopMargin": -25.29,
+                    "BottomMargin": -69.71,
+                    "Tag": 74,
+                    "ActionTag": -2143837744,
+                    "Size": {
+                      "X": 135.0,
+                      "Y": 95.0
+                    },
+                    "Name": "R_A",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 517699101,
+                "ZOrder": 30,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "Bone_30",
+                "ctype": "BoneNodeObjectData"
+              },
+              {
+                "Length": 279.0,
+                "Position": {
+                  "X": 356.8796,
+                  "Y": -60.0526
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "RotationSkewX": -713.5098,
+                "RotationSkewY": -713.5098,
+                "CColor": {},
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "Tag": 70,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "test_minion_r_leg.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 162.5329,
+                      "Y": -30.3209
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "RotationSkewX": -90.4178,
+                    "RotationSkewY": -90.4163,
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 162.5329,
+                    "RightMargin": -207.5329,
+                    "TopMargin": -140.6791,
+                    "BottomMargin": -30.3209,
+                    "Tag": 77,
+                    "ActionTag": 1502770999,
+                    "Size": {
+                      "X": 45.0,
+                      "Y": 171.0
+                    },
+                    "Name": "L_L",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": -1107108323,
+                "ZOrder": 31,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "Bone_31",
+                "ctype": "BoneNodeObjectData"
+              },
+              {
+                "Length": 244.0,
+                "Position": {
+                  "X": 342.0918,
+                  "Y": 36.4134
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "RotationSkewX": -34.9912,
+                "RotationSkewY": -34.9912,
+                "CColor": {},
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "Tag": 71,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "test_minion_l_arm.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 176.379,
+                      "Y": -37.7565
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "RotationSkewX": -442.4985,
+                    "RotationSkewY": -82.4981,
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 176.379,
+                    "RightMargin": -240.379,
+                    "TopMargin": -131.2435,
+                    "BottomMargin": -37.7565,
+                    "Tag": 72,
+                    "ActionTag": -1457679917,
+                    "Size": {
+                      "X": 64.0,
+                      "Y": 169.0
+                    },
+                    "Name": "R_L",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 572970226,
+                "ZOrder": 32,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "Bone_32",
+                "ctype": "BoneNodeObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "test_minion_body.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 382.0284,
+                  "Y": -134.8485
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "RotationSkewX": -88.8885,
+                "RotationSkewY": -88.8885,
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 382.0284,
+                "RightMargin": -646.0284,
+                "TopMargin": -195.1515,
+                "BottomMargin": -134.8485,
+                "Tag": 75,
+                "ActionTag": -756966925,
+                "Size": {
+                  "X": 264.0,
+                  "Y": 330.0
+                },
+                "Name": "Body",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -1111193388,
+            "ZOrder": 100,
             "Size": {
-              "X": 135.0,
-              "Y": 95.0
-            },
-            "Name": "Sprite_2",
-            "ctype": "SpriteObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "minions_0000 (3).png",
-              "Plist": ""
-            },
-            "BlendFunc": {
-              "Src": 770,
-              "Dst": 771
-            },
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": 19.4377,
-              "Y": 82.1207
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "RotationSkewX": 6.7298,
-            "RotationSkewY": 6.7298,
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
               "X": 0.0,
               "Y": 0.0
             },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": -112.5623,
-            "RightMargin": -151.4377,
-            "TopMargin": -247.1207,
-            "BottomMargin": -82.8793,
-            "Tag": 50,
-            "ActionTag": -1350929873,
-            "Size": {
-              "X": 264.0,
-              "Y": 330.0
-            },
-            "Name": "Sprite_3",
-            "ctype": "SpriteObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "minions_0000 (4).png",
-              "Plist": ""
-            },
-            "BlendFunc": {
-              "Src": 770,
-              "Dst": 771
-            },
-            "AnchorPoint": {
-              "ScaleX": 1.0,
-              "ScaleY": 0.5
-            },
-            "Position": {
-              "X": -110.7336,
-              "Y": 12.9976
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "RotationSkewX": 12.7497,
-            "RotationSkewY": 12.7497,
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": -210.7336,
-            "RightMargin": 110.7336,
-            "TopMargin": -63.9976,
-            "BottomMargin": -38.0024,
-            "Tag": 35,
-            "ActionTag": 1623591126,
-            "Size": {
-              "X": 100.0,
-              "Y": 102.0
-            },
-            "Name": "Sprite_4",
-            "ctype": "SpriteObjectData"
-          },
-          {
-            "FileData": {
-              "Type": "Normal",
-              "Path": "minions_0000 (5).png",
-              "Plist": ""
-            },
-            "BlendFunc": {
-              "Src": 770,
-              "Dst": 771
-            },
-            "AnchorPoint": {
-              "ScaleX": 0.5,
-              "ScaleY": 1.0
-            },
-            "Position": {
-              "X": -40.56,
-              "Y": -60.2787
-            },
-            "Scale": {
-              "ScaleX": 1.0,
-              "ScaleY": 1.0
-            },
-            "RotationSkewX": 403.3069,
-            "RotationSkewY": 403.3069,
-            "CColor": {},
-            "IconVisible": false,
-            "PrePosition": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "PreSize": {
-              "X": 0.0,
-              "Y": 0.0
-            },
-            "LeftMargin": -63.06,
-            "RightMargin": 18.06,
-            "TopMargin": 60.2787,
-            "BottomMargin": -231.2787,
-            "Tag": 36,
-            "ActionTag": 775001319,
-            "Size": {
-              "X": 45.0,
-              "Y": 171.0
-            },
-            "Name": "Sprite_5",
-            "ctype": "SpriteObjectData"
+            "Name": "Bone_25",
+            "ctype": "BoneNodeObjectData"
           }
         ],
         "Size": {
@@ -817,11 +1076,11 @@
         "ctype": "SkeletonNodeObjectData"
       },
       "UsedResources": [
-        "minions_0000 (1).png",
-        "minions_0000 (2).png",
-        "minions_0000 (3).png",
-        "minions_0000 (4).png",
-        "minions_0000 (5).png"
+        "test_minion_body.png",
+        "test_minion_l_arm.png",
+        "test_minion_l_leg.png",
+        "test_minion_r_arm.png",
+        "test_minion_r_leg.png"
       ],
       "ctype": "GameFileData"
     }

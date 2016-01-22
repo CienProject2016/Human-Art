@@ -19,7 +19,6 @@ var GameLayer = cc.Layer.extend({
         var component = new Component("Hero");
         if (component.childrenCount != 0) {
             cc.eventManager.addListener(minionListener, component);
-            console.log(component.getContentSize());
             this.addChild(component);
         }
 
@@ -98,11 +97,10 @@ var minionListener = cc.EventListener.create({
     swallowTouches: true,
     onTouchBegan: function (touch, event) {
         var target = event.getCurrentTarget();
-
+        console.log(target);
         var locationInNode = target.convertToNodeSpace(touch.getLocation());
         var s = target.getContentSize();
         var rect = cc.rect(0, 0, s.width, s.height);
-
         if (cc.rectContainsPoint(rect, locationInNode)) {
             cc.log("sprite began... x = " + locationInNode.x + ", y = " + locationInNode.y);
             target.opacity = 180;
