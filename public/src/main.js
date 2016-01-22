@@ -1,5 +1,5 @@
 var g_mainmenu = [
-    "res/HelloWorld.png", "res/Hero.json"
+    "res/HelloWorld.png", "res/Hero.json", "res/minion.png"
 ]
 
 var GameLayer = cc.Layer.extend({
@@ -26,6 +26,18 @@ var GameLayer = cc.Layer.extend({
         var label = cc.LabelTTF.create("Hello World", "Arial", 40);
         label.setPosition(size.width / 2, size.height / 2);
         this.addChild(label, 1);
+        
+        var mySprite = cc.Sprite.create("res/minion.png"); 
+        mySprite.setPosition(cc.p(size.width/4 , size.height / 4)); // 스프라이트  포지션  오른쪽 아래로
+        this.addChild(mySprite);
+        
+        var moveToRight = cc.MoveBy.create(1, cc.p(size.width - mySprite.getPosition().x, 0)); //스프라이트 윈도우 사이즈 - 스프라이트 포지션 만큼 오른쪽으로 움직임 
+        mySprite.runAction(moveToRight);
+        var moveToLeft = cc.MoveBy.create(1, cc.p(-size.width, 0)); //스프라이트 윈도사이즈 만큼 왼쪽으로 움직임 
+        var moveToOrigin = cc.MoveBy.create(1, cc.p(mySprite.getPosition().x, 0)); //스프라이트 포지션만큼 오른쪽으로 움직임 
+        var moveSeq = cc.Sequence.create(moveToRight, moveToLeft, moveToOrigin); //무브투 3개 합친 시퀀스 
+
+        mySprite.runAction(moveSeq).repeatForever();
     },
 
     onEnter: function () {
