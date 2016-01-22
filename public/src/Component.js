@@ -9,7 +9,6 @@ var Component = cc.Layer.extend({
         }
         
         var action = component.action;
-        console.log(component.node);
         if (action) {
             component.node.runAction(action);
             action.gotoFrameAndPlay(0, true);
