@@ -14,7 +14,13 @@ var Board = cc.Layer.extend({
         console.log("boardId : ")
         console.log(this.id);
         var bgSprite = cc.Sprite.create("res/colorbg.jpg");
-        bgSprite.setPosition(size.width / 2, size.height / 2);
+        bgSprite.setPosition(size.width  /2, size.height/8);
+        
+        var movebg = cc.MoveBy.create(10, cc.p(0, size.height));
+        var movebg1 = cc.MoveBy.create(0, cc.p(0, -size.height));
+        var bgsequence = cc.Sequence.create(movebg,movebg1);
+        bgSprite.runAction(bgsequence).repeatForever();
+        
         bgSprite.setScale(1.0);
         this.addChild(bgSprite, 0);
         
