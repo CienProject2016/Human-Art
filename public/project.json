@@ -5,6 +5,8 @@
     "renderMode"    : 1,
     "jsList"        : [
         "src/main.js",
-		"src/Component.js"
+		"src/Component.js",
+        "src/Ui.js"
+        
     ]
 }
