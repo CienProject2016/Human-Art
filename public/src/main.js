@@ -1,5 +1,5 @@
 var g_mainmenu = [
-    "res/HelloWorld.png", "res/Hero.json", "res/minion.png"
+    "res/Hero.json","res/menu.json"
 ]
 
 window.onload = function () {

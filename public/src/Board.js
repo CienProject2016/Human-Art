@@ -17,6 +17,9 @@ var Board = cc.Layer.extend({
         bgSprite.setPosition(size.width / 2, size.height / 2);
         bgSprite.setScale(1.0);
         this.addChild(bgSprite, 0);
+        
+        var ui = new Ui("menu");
+        this.addChild(ui);
 
         var component = new Component("Hero");
         if (component.childrenCount != 0) {
