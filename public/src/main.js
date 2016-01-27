@@ -3,22 +3,22 @@ var g_mainmenu = [
 ]
 
 var GameLayer = cc.Layer.extend({
-    ctor: function () {
+    ctor: function () { //ctor은 생성자. void와 비슷한 것.
         this._super();
         this.init();
     },
-    init: function () {
+    init: function () { //초기화.
         this._super();
         var size = cc.director.getWinSize();
 
         var bgSprite = cc.Sprite.create("res/colorbg.jpg");
         bgSprite.setPosition(size.width / 2, size.height / 2);
-        bgSprite.setScale(1.0);
+        bgSprite.setScale(1.0); //규모.
         this.addChild(bgSprite, 0);
 
         var component = new Component("Hero"); // coponent.js 로 이동.
-        if (component.childrenCount != 0) {
-            cc.eventManager.addListener(minionListener, component);
+        if (component.childrenCount != 0) { 
+            cc.eventManager.addListener(minionListener, component); //
             console.log(component.getContentSize());
             this.addChild(component);
         }
@@ -93,7 +93,7 @@ window.onload = function () {
     cc.game.run("gameCanvas");
 };
 
-var minionListener = cc.EventListener.create({
+var minionListener = cc.EventListener.create({ //상속.
     event: cc.EventListener.TOUCH_ONE_BY_ONE,
     swallowTouches: true,
     onTouchBegan: function (touch, event) {
