@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Hello Cocos2d-JS</title> 
-    <script type="text/javascript" src="frameworks/cocos2d-html5/cocos2d-js-v3.9.js" charset="UTF-8"></script>
+    <title>Hello Cocos2d-JS</title>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="7648772498-fb1rde21d51i2j9e0ddicmo0abes4lk4.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <script type="text/javascript" src="src/login.js" charset="UTF-8"></script>
+
+    <script type="text/javascript" src="frameworks/cocos2d-html5/cocos2d-js-v3.10.js" charset="UTF-8"></script>
 </head>
+
 <body>
-        <canvas id="gameCanvas" width="1920" height="1080"></canvas>
+    <p id="userName"></p>
+    <a href="#" onclick="onSignOut();">Sign out</a>
+    <canvas id="gameCanvas" width="1920" height="1080"></canvas>
     <script type="text/javascript" src="src/main.js" charset="UTF-8"></script>
+
+    <dialog id="signInDialog">
+        <form method="dialog">
+            <section>
+                <p>
+                    <label>구글 아이디로 로그인</label>
+                    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                </p>
+            </section>
+        </form>
+    </dialog>
+
+    <script>
+        var openDialog = function() {
+            document.getElementById("signInDialog").showModal();
+        };
+        if (profile === undefined)
+            openDialog();
+            
+    </script>
 </body>
+
 </html>
