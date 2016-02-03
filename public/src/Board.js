@@ -49,8 +49,6 @@ var Board = cc.Layer.extend({
         
         console.log(this);
         var bombTool = new Tool("bomb");
-        console.log("bombtool: --");
-        console.log(bombTool.width);
         
         bombTool.setPosition(cc.p(size.width/3, size.height/3));
         this.addChild(bombTool);
