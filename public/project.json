@@ -4,9 +4,12 @@
     "id"            : "gameCanvas",
     "renderMode"    : 1,
     "jsList"        : [
-        "src/main.js",
-		"src/Component.js",
-		"src/Board.js",
-		"src/User.js"
+        "src/ElectricPower.js",
+        "src/Score.js",
+        "src/User.js",
+        "src/Tool.js",	
+		"src/Component.js",	  
+        "src/Board.js",
+        "src/main.js"
     ]
 }
