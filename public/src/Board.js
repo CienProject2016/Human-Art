@@ -50,8 +50,7 @@ var Board = cc.Layer.extend({
         console.log(this);
         var bombTool = new Tool("bomb");
         
-        bombTool.setPosition(cc.p(size.width/3, size.height/3));
-        this.addChild(bombTool);
+        this.addChild(bombTool, 2);
         
         var moveToRight = cc.MoveBy.create(1, cc.p(size.width - mySprite.getPosition().x, 0)); //스프라이트 윈도우 사이즈 - 스프라이트 포지션 만큼 오른쪽으로 움직임 
         mySprite.runAction(moveToRight);

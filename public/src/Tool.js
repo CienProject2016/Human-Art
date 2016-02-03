@@ -9,8 +9,8 @@ var Tool = cc.Sprite.extend({
             event: cc.EventListener.MOUSE,
             onMouseDown: function (event) {
                 if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
-                    ref.x = event.x;
-                    ref.y = event.y;                     
+                    console.log(event);
+                    ref.setPosition(event._x, event._y);                  
                     ref.visible = true;
                 }
             },
