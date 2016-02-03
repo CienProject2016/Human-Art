@@ -1,8 +1,8 @@
 var Board = cc.Layer.extend({
-    id:null,
-    name:null,
-    componentList:[],
-    userList:[],
+    id: null,
+    name: null,
+    componentList: [],
+    userList: [],
     ctor: function (boardId) {
         this._super();
         this.init(boardId);
@@ -14,34 +14,39 @@ var Board = cc.Layer.extend({
         console.log("boardId : ")
         console.log(this.id);
         var bgSprite = cc.Sprite.create("res/colorbg.jpg");
-        bgSprite.setPosition(size.width  /2, size.height/8);
-        
+        bgSprite.setPosition(size.width / 2, size.height / 8);
+
         var movebg = cc.MoveBy.create(10, cc.p(0, size.height));
         var movebg1 = cc.MoveBy.create(0, cc.p(0, -size.height));
-        var bgsequence = cc.Sequence.create(movebg,movebg1);
+        var bgsequence = cc.Sequence.create(movebg, movebg1);
         bgSprite.runAction(bgsequence).repeatForever();
-        
+
         bgSprite.setScale(1.0);
         this.addChild(bgSprite, 0);
-        
+
         var ui = new Ui("menu");
         this.addChild(ui);
 
-        var component = new Component("Hero");
+        var component = new Component("hourse");
         if (component.childrenCount != 0) {
-            cc.eventManager.addListener(minionListener, component);
+            cc.eventManager.addListener(cc.EventListener.create(minionListenerObject()), component);
             console.log(component.getContentSize());
             this.addChild(component);
         }
 
+        var component2 = new Component("skeleton1");
+        cc.eventManager.addListener(cc.EventListener.create(minionListenerObject()), component2);
+        this.addChild(component2);
+
+
         var label = cc.LabelTTF.create("Hello World", "Arial", 40);
         label.setPosition(size.width / 2, size.height / 2);
         this.addChild(label, 1);
-        
-        var mySprite = cc.Sprite.create("res/minion.png"); 
-        mySprite.setPosition(cc.p(size.width/4 , size.height / 4)); // 스프라이트  포지션  오른쪽 아래로
+
+        var mySprite = cc.Sprite.create("res/minion.png");
+        mySprite.setPosition(cc.p(size.width / 4, size.height / 4)); // 스프라이트  포지션  오른쪽 아래로
         this.addChild(mySprite);
-        
+
         var moveToRight = cc.MoveBy.create(1, cc.p(size.width - mySprite.getPosition().x, 0)); //스프라이트 윈도우 사이즈 - 스프라이트 포지션 만큼 오른쪽으로 움직임 
         mySprite.runAction(moveToRight);
         var moveToLeft = cc.MoveBy.create(1, cc.p(-size.width, 0)); //스프라이트 윈도사이즈 만큼 왼쪽으로 움직임 
@@ -88,33 +93,34 @@ Board.scene = function (boardId) {
     return scene;
 };
 
+function minionListenerObject() {
+    return {
+        event: cc.EventListener.TOUCH_ONE_BY_ONE,
+        swallowTouches: true,
+        onTouchBegan: function (touch, event) {
+            var target = event.getCurrentTarget();
 
-var minionListener = cc.EventListener.create({
-    event: cc.EventListener.TOUCH_ONE_BY_ONE,
-    swallowTouches: true,
-    onTouchBegan: function (touch, event) {
-        var target = event.getCurrentTarget();
+            var locationInNode = target.convertToNodeSpace(touch.getLocation());
+            var s = target.getContentSize();
+            var rect = cc.rect(0, 0, s.width, s.height);
 
-        var locationInNode = target.convertToNodeSpace(touch.getLocation());
-        var s = target.getContentSize();
-        var rect = cc.rect(0, 0, s.width, s.height);
-
-        if (cc.rectContainsPoint(rect, locationInNode)) {
-            cc.log("sprite began... x = " + locationInNode.x + ", y = " + locationInNode.y);
-            target.opacity = 180;
-            return true;
+            if (cc.rectContainsPoint(rect, locationInNode)) {
+                cc.log("sprite began... x = " + locationInNode.x + ", y = " + locationInNode.y);
+                target.opacity = 180;
+                return true;
+            }
+            return false;
+        },
+        onTouchMoved: function (touch, event) {
+            var target = event.getCurrentTarget();
+            var delta = touch.getDelta();
+            target.x += delta.x;
+            target.y += delta.y;
+        },
+        onTouchEnded: function (touch, event) {
+            var target = event.getCurrentTarget();
+            cc.log("sprite onTouchesEnded.. ");
+            target.setOpacity(255);
         }
-        return false;
-    },
-    onTouchMoved: function (touch, event) {
-        var target = event.getCurrentTarget();
-        var delta = touch.getDelta();
-        target.x += delta.x;
-        target.y += delta.y;
-    },
-    onTouchEnded: function (touch, event) {
-        var target = event.getCurrentTarget();
-        cc.log("sprite onTouchesEnded.. ");
-        target.setOpacity(255);
-    }
-});
+    };
+}
