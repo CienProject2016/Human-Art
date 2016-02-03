@@ -5,10 +5,13 @@
     "renderMode"    : 1,
     "jsList"        : [
         "src/login.js",
-        "src/main.js",
-		"src/Component.js",
-		"src/Board.js",
-		"src/User.js",
-        "src/Ui.js"
+        "src/ElectricPower.js",
+        "src/Score.js",
+        "src/User.js",
+        "src/Tool.js",	
+		"src/Component.js",	  
+        "src/Ui.js",
+        "src/Board.js",
+        "src/main.js"
     ]
 }

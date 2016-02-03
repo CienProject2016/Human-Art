@@ -11,7 +11,7 @@ var Board = cc.Layer.extend({
         this.id = boardId;
         this._super();
         var size = cc.director.getWinSize();
-        console.log("boardId : ")
+        console.log("boardId : ");
         console.log(this.id);
         var bgSprite = cc.Sprite.create("res/colorbg.jpg");
         bgSprite.setPosition(size.width / 2, size.height / 8);
@@ -46,7 +46,15 @@ var Board = cc.Layer.extend({
         var mySprite = cc.Sprite.create("res/minion.png");
         mySprite.setPosition(cc.p(size.width / 4, size.height / 4)); // 스프라이트  포지션  오른쪽 아래로
         this.addChild(mySprite);
-
+        
+        console.log(this);
+        var bombTool = new Tool("bomb");
+        console.log("bombtool: --");
+        console.log(bombTool.width);
+        
+        bombTool.setPosition(cc.p(size.width/3, size.height/3));
+        this.addChild(bombTool);
+        
         var moveToRight = cc.MoveBy.create(1, cc.p(size.width - mySprite.getPosition().x, 0)); //스프라이트 윈도우 사이즈 - 스프라이트 포지션 만큼 오른쪽으로 움직임 
         mySprite.runAction(moveToRight);
         var moveToLeft = cc.MoveBy.create(1, cc.p(-size.width, 0)); //스프라이트 윈도사이즈 만큼 왼쪽으로 움직임 
