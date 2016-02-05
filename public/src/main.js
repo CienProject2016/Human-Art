@@ -22,6 +22,9 @@ window.onload = function () {
             User.id = exampleId;
             User.session = exampleSession;
             
+            //Electric default : 100
+            ElectricPower(100);
+            
             //Board는 내부에서 객체를 생성한다.      
             cc.director.runScene(Board.scene(exampleBoardId));
         }, this);
