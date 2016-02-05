@@ -7,6 +7,13 @@ var Board = cc.Layer.extend({
         this._super();
         this.init(boardId);
     },
+    
+   minions : [
+            cc.Sprite.create("res/minion.png"),
+            cc.Sprite.create("res/test_minion_body.png"),
+            cc.Sprite.create("res/test_minion_l_arm.png")
+        ],
+    
     init: function (boardId) {
         this.id = boardId;
         this._super();
@@ -43,33 +50,10 @@ var Board = cc.Layer.extend({
         label.setPosition(size.width / 2, size.height / 2);
         this.addChild(label, 1);
 
-<<<<<<< Updated upstream
-        var mySprite = cc.Sprite.create("res/minion.png");
-        mySprite.setPosition(cc.p(size.width / 4, size.height / 4)); // 스프라이트  포지션  오른쪽 아래로
-        this.addChild(mySprite);
-        
-        console.log(this);
-        var bombTool = new Tool("bomb");
-        
-        this.addChild(bombTool, 2);
-        
-        var moveToRight = cc.MoveBy.create(1, cc.p(size.width - mySprite.getPosition().x, 0)); //스프라이트 윈도우 사이즈 - 스프라이트 포지션 만큼 오른쪽으로 움직임 
-        mySprite.runAction(moveToRight);
-        var moveToLeft = cc.MoveBy.create(1, cc.p(-size.width, 0)); //스프라이트 윈도사이즈 만큼 왼쪽으로 움직임 
-        var moveToOrigin = cc.MoveBy.create(1, cc.p(mySprite.getPosition().x, 0)); //스프라이트 포지션만큼 오른쪽으로 움직임 
-        var moveSeq = cc.Sequence.create(moveToRight, moveToLeft, moveToOrigin); //무브투 3개 합친 시퀀스 
 
-        mySprite.runAction(moveSeq).repeatForever();
-    },
 
-=======
-
-        var minions = [
-            cc.Sprite.create("res/minion.png"),
-            cc.Sprite.create("res/test_minion_body.png"),
-            cc.Sprite.create("res/test_minion_l_arm.png")
-        ]
-        for (var i = 0; i < minions.length; i++) {
+        
+        for (var i = 0; i < this.minions.length; i++) {
 
             var x = Math.floor((Math.random() * size.width));
             var y = Math.floor((Math.random() * size.height / 10) + size.height / 50);
@@ -85,9 +69,9 @@ var Board = cc.Layer.extend({
 
             var minSeq = cc.Sequence.create(move, moveaway, move2);
 
-            minions[i].runAction(minSeq).repeatForever();
+           this.minions[i].runAction(minSeq).repeatForever();
 
-            this.addChild(minions[i], 500);
+            this.addChild(this.minions[i], 500);
 
         }
 
@@ -95,29 +79,36 @@ var Board = cc.Layer.extend({
     },
 
 
-    update: function () {
+    update: function (delta) {
      
-     var    minions=this.getChildByTag(500).getChildren();
-         minions.forEach(function (minion) {
+     
+     this.minions.forEach(function (minion) {
 
                 var p = minion.getPosition();
-                if (p.y > cc.director.getWinSize().height) {
+                if (p.y > 400) {
 
                     minion.runAction(cc.MoveBy.create(0, cc.p(0, -100)));
 
                 }
                 if (p.y < 0) {
 
-                    minion.runAction(cc.MoveBy.create(0, cc.p(0, 100)));
+                    minion.runAction(cc.MoveBy.create(0, cc.p(0, 50)));
                 }
 
+                if (p.x > cc.director.getWinSize().width) {
+
+                    minion.runAction(cc.MoveBy.create(0, cc.p(-30,0)));
+
+                }
+                if (p.x < 0) {
+
+                    minion.runAction(cc.MoveBy.create(0, cc.p(30, 0)));
+                }
             });
-        }
-    },
+        },
+    
 
 
-
->>>>>>> Stashed changes
     onEnter: function () {
         this._super();
 
