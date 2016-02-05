@@ -2,6 +2,7 @@ var Board = cc.Layer.extend({
     id: null,
     name: null,
     componentList: [],
+    electricPowerLabel :0,
     userList: [],
     ctor: function (boardId) {
         this._super();
@@ -39,9 +40,9 @@ var Board = cc.Layer.extend({
         this.addChild(component2);
 
 
-        var label = cc.LabelTTF.create("Hello World", "Arial", 40);
-        label.setPosition(size.width / 2, size.height / 2);
-        this.addChild(label, 1);
+        this.electricPowerLabel = cc.LabelTTF.create(User.electricPower.getCurrentElectricPower(), "Arial", 80);
+        this.electricPowerLabel.setPosition(size.width / 10, size.height * 14 / 15);
+        this.addChild(this.electricPowerLabel, 1);
 
         var mySprite = cc.Sprite.create("res/minion.png");
         mySprite.setPosition(cc.p(size.width / 4, size.height / 4)); // 스프라이트  포지션  오른쪽 아래로
@@ -59,8 +60,12 @@ var Board = cc.Layer.extend({
         var moveSeq = cc.Sequence.create(moveToRight, moveToLeft, moveToOrigin); //무브투 3개 합친 시퀀스 
 
         mySprite.runAction(moveSeq).repeatForever();
+        this.scheduleUpdate();
     },
 
+    update : function (delta){
+        this.electricPowerLabel.setString(User.electricPower.getCurrentElectricPower());
+    },
     onEnter: function () {
         this._super();
 
