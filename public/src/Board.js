@@ -3,6 +3,8 @@ var Board = cc.Layer.extend({
     name: null,
     componentList: [],
     userList: [],
+    usingTool :null,
+    usingToolImage: null,
     ctor: function (boardId) {
         this._super();
         this.init(boardId);
@@ -27,6 +29,11 @@ var Board = cc.Layer.extend({
         var ui = new Ui("menu");
         this.addChild(ui);
 
+        this.usingTool = User.usingTool;
+        this.makeUsingTool();
+        this.makeToolInventory();   
+
+
         var component = new Component("hourse");
         if (component.childrenCount != 0) {
             cc.eventManager.addListener(cc.EventListener.create(minionListenerObject()), component);
@@ -46,12 +53,14 @@ var Board = cc.Layer.extend({
         var mySprite = cc.Sprite.create("res/minion.png");
         mySprite.setPosition(cc.p(size.width / 4, size.height / 4)); // 스프라이트  포지션  오른쪽 아래로
         this.addChild(mySprite);
-        
+
         console.log(this);
-        var bombTool = new Tool("bomb");
+       
+        //add using Tool cursor 
+        this.addChild(this.usingTool, 999, "usingTool");
+
         
-        this.addChild(bombTool, 2);
-        
+
         var moveToRight = cc.MoveBy.create(1, cc.p(size.width - mySprite.getPosition().x, 0)); //스프라이트 윈도우 사이즈 - 스프라이트 포지션 만큼 오른쪽으로 움직임 
         mySprite.runAction(moveToRight);
         var moveToLeft = cc.MoveBy.create(1, cc.p(-size.width, 0)); //스프라이트 윈도사이즈 만큼 왼쪽으로 움직임 
@@ -59,6 +68,44 @@ var Board = cc.Layer.extend({
         var moveSeq = cc.Sequence.create(moveToRight, moveToLeft, moveToOrigin); //무브투 3개 합친 시퀀스 
 
         mySprite.runAction(moveSeq).repeatForever();
+        this.scheduleUpdate();
+    },
+    
+    update : function (delta){
+        var usingToolInBoard = this.getChildByName("usingTool");
+        this.usingTool = usingToolInBoard;
+        this.usingToolImage = this.getChildByName("usingToolImage");
+        this.usingToolImage.setTexture("res/"+ this.usingTool.name+".png");
+    },
+
+    
+    makeToolInventory : function(){
+        var size = cc.director.getWinSize();
+        var toolListFrame = cc.Sprite.create("res/toolListFrame.png");
+        toolListFrame.setPosition(cc.p(size.width * 8 / 10, size.height * 3 / 19));
+        this.addChild(toolListFrame, 8);
+        
+        //추후 리스트에서 뽑아올 것
+        var hand = cc.Sprite.create("res/hand.png");
+        hand.setPosition(cc.p(size.width * 7 / 10, size.height * 3 / 19));
+        cc.eventManager.addListener(cc.EventListener.create(toolListener(this, "hand")), hand);
+        this.addChild(hand,9);
+        
+        var bomb = cc.Sprite.create("res/bomb.png");
+        this.addChild(bomb,10);
+        bomb.setPosition(cc.p(size.width * 8 / 10, size.height * 3 / 19));
+        cc.eventManager.addListener(cc.EventListener.create(toolListener(this, "bomb")), bomb);
+    },
+    
+    makeUsingTool : function (){
+        var size = cc.director.getWinSize();
+        var usingToolFrame = cc.Sprite.create("res/using.png");
+        usingToolFrame.setPosition(cc.p(size.width * 9 / 10, size.height * 16 / 19));
+        this.addChild(usingToolFrame, 6);
+
+        this.usingToolImage = cc.Sprite.create("res/" + User.usingTool.name + ".png");
+        this.usingToolImage.setPosition(cc.p(size.width * 9 / 10, size.height * 6 / 7));
+        this.addChild(this.usingToolImage, 7, "usingToolImage");  
     },
 
     onEnter: function () {
@@ -107,6 +154,7 @@ function minionListenerObject() {
 
             var locationInNode = target.convertToNodeSpace(touch.getLocation());
             var s = target.getContentSize();
+           
             var rect = cc.rect(0, 0, s.width, s.height);
 
             if (cc.rectContainsPoint(rect, locationInNode)) {
@@ -129,3 +177,39 @@ function minionListenerObject() {
         }
     };
 }
+
+
+function toolListener(board, toolName) {
+    
+    return {
+        event: cc.EventListener.TOUCH_ONE_BY_ONE,
+        swallowTouches: true,
+        onTouchBegan: function (touch, event) {
+            
+            var target = event.getCurrentTarget();
+
+            var locationInNode = target.convertToNodeSpace(touch.getLocation());
+            var s = target.getContentSize();
+           
+            var rect = cc.rect(0, 0, s.width, s.height);
+
+            if (cc.rectContainsPoint(rect, locationInNode)) {
+                var usedTool = board.getChildByName("usingTool");
+                usedTool.setTexture("res/"+ toolName+".png");
+                usedTool.name = toolName;
+                User.usingTool = usedTool;
+                console.log(usedTool.name);
+                return true;
+            }
+            return false;
+            
+        },
+        onTouchMoved: function (touch, event) {
+            
+        },
+        onTouchEnded: function (touch, event) {
+            
+        }
+    };
+}
+
