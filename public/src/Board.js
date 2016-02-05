@@ -43,6 +43,7 @@ var Board = cc.Layer.extend({
         label.setPosition(size.width / 2, size.height / 2);
         this.addChild(label, 1);
 
+<<<<<<< Updated upstream
         var mySprite = cc.Sprite.create("res/minion.png");
         mySprite.setPosition(cc.p(size.width / 4, size.height / 4)); // 스프라이트  포지션  오른쪽 아래로
         this.addChild(mySprite);
@@ -61,6 +62,62 @@ var Board = cc.Layer.extend({
         mySprite.runAction(moveSeq).repeatForever();
     },
 
+=======
+
+        var minions = [
+            cc.Sprite.create("res/minion.png"),
+            cc.Sprite.create("res/test_minion_body.png"),
+            cc.Sprite.create("res/test_minion_l_arm.png")
+        ]
+        for (var i = 0; i < minions.length; i++) {
+
+            var x = Math.floor((Math.random() * size.width));
+            var y = Math.floor((Math.random() * size.height / 10) + size.height / 50);
+
+            var ms = Math.floor((Math.random() + 1));
+            var mas = (size.width - x) / size.width * ms
+            var m2s = x / size.width * ms;
+
+
+            var move = cc.MoveBy.create(mas, cc.p(size.width - x, y));
+            var moveaway = cc.MoveBy.create(ms, cc.p(-size.width, -y));
+            var move2 = cc.MoveBy.create(m2s, cc.p(x, y));
+
+            var minSeq = cc.Sequence.create(move, moveaway, move2);
+
+            minions[i].runAction(minSeq).repeatForever();
+
+            this.addChild(minions[i], 500);
+
+        }
+
+        this.scheduleUpdate();
+    },
+
+
+    update: function () {
+     
+     var    minions=this.getChildByTag(500).getChildren();
+         minions.forEach(function (minion) {
+
+                var p = minion.getPosition();
+                if (p.y > cc.director.getWinSize().height) {
+
+                    minion.runAction(cc.MoveBy.create(0, cc.p(0, -100)));
+
+                }
+                if (p.y < 0) {
+
+                    minion.runAction(cc.MoveBy.create(0, cc.p(0, 100)));
+                }
+
+            });
+        }
+    },
+
+
+
+>>>>>>> Stashed changes
     onEnter: function () {
         this._super();
 
