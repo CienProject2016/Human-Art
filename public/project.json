@@ -3,6 +3,7 @@
     "frameRate"     : 60,
     "id"            : "gameCanvas",
     "renderMode"    : 1,
+    "modules" : ["cocos2d", "extensions", "external"],
     "jsList"        : [
         "src/login.js",
         "src/ElectricPower.js",

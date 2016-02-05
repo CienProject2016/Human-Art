@@ -1,6 +1,6 @@
 {
   "ID": "8e2e4fc8-8ba3-45f4-bd13-28eae88fe08e",
-  "Version": "2.3.3.0",
+  "Version": "2.3.4",
   "Name": "menu",
   "Content": {
     "Content": {
@@ -17,11 +17,11 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "PIC1.png",
+              "Path": "menu/PIC1.png",
               "Plist": ""
             },
             "BlendFunc": {
-              "Src": 770,
+              "Src": 1,
               "Dst": 771
             },
             "AnchorPoint": {
@@ -96,20 +96,21 @@
               "Y": 0.0185
             },
             "LeftMargin": 192.2953,
-            "RightMargin": 1705.7046,
+            "RightMargin": 1705.7047,
             "TopMargin": 66.39,
-            "BottomMargin": 993.6099,
-            "Tag": 47,
+            "BottomMargin": 993.61,
+            "Tag": 50,
             "ActionTag": -1885344378,
             "Size": {
               "X": 22.0,
               "Y": 20.0
             },
             "Alpha": 128,
-            "Name": "Text_1",
+            "Name": "Text",
             "ctype": "TextObjectData"
           },
           {
+            "ClipAble": false,
             "BackColorAlpha": 0,
             "ComboBoxIndex": 1,
             "SingleColor": {
@@ -163,17 +164,17 @@
                 },
                 "DisabledFileData": {
                   "Type": "Normal",
-                  "Path": "PIC6.png",
+                  "Path": "menu/PIC6.png",
                   "Plist": ""
                 },
                 "PressedFileData": {
                   "Type": "Normal",
-                  "Path": "PIC6.png",
+                  "Path": "menu/PIC6.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
                   "Type": "Normal",
-                  "Path": "PIC5.png",
+                  "Path": "menu/PIC5.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
@@ -198,38 +199,38 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 163.6152,
-                  "Y": 177.0172
+                  "X": 139.1868,
+                  "Y": 176.2203
                 },
                 "Scale": {
-                  "ScaleX": 1.0,
+                  "ScaleX": 1.7587,
                   "ScaleY": 1.0
                 },
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.8181,
-                  "Y": 0.8851
+                  "X": 0.6959,
+                  "Y": 0.8811
                 },
                 "PreSize": {
                   "X": 0.335,
                   "Y": 0.335
                 },
-                "LeftMargin": 130.1152,
-                "RightMargin": 2.8848,
-                "TopMargin": -10.5172,
-                "BottomMargin": 143.5172,
+                "LeftMargin": 105.6868,
+                "RightMargin": 27.3132,
+                "TopMargin": -9.7203,
+                "BottomMargin": 142.7203,
                 "CallBackType": "Click",
-                "Tag": 49,
+                "Tag": 40,
                 "Children": [
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "PIC2.png",
+                      "Path": "menu/PIC2.png",
                       "Plist": ""
                     },
                     "BlendFunc": {
-                      "Src": 770,
+                      "Src": 1,
                       "Dst": 771
                     },
                     "AnchorPoint": {
@@ -273,7 +274,7 @@
                   "X": 67.0,
                   "Y": 67.0
                 },
-                "Name": "Button4",
+                "Name": "Button1",
                 "ctype": "ButtonObjectData"
               },
               {
@@ -282,17 +283,17 @@
                 "TextColor": {},
                 "DisabledFileData": {
                   "Type": "Normal",
-                  "Path": "PIC6.png",
+                  "Path": "menu/PIC6.png",
                   "Plist": ""
                 },
                 "PressedFileData": {
                   "Type": "Normal",
-                  "Path": "PIC6.png",
+                  "Path": "menu/PIC6.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
                   "Type": "Normal",
-                  "Path": "PIC5.png",
+                  "Path": "menu/PIC5.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
@@ -317,35 +318,35 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 163.6152,
-                  "Y": 102.0174
+                  "X": 139.1868,
+                  "Y": 101.2207
                 },
                 "Scale": {
-                  "ScaleX": 1.0,
+                  "ScaleX": 1.7587,
                   "ScaleY": 1.0
                 },
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.8181,
-                  "Y": 0.5101
+                  "X": 0.6959,
+                  "Y": 0.5061
                 },
                 "PreSize": {
                   "X": 0.335,
                   "Y": 0.335
                 },
-                "LeftMargin": 130.1152,
-                "RightMargin": 2.8848,
-                "TopMargin": 64.4826,
-                "BottomMargin": 68.5174,
+                "LeftMargin": 105.6868,
+                "RightMargin": 27.3132,
+                "TopMargin": 65.2793,
+                "BottomMargin": 67.7207,
                 "CallBackType": "Click",
-                "Tag": 51,
+                "Tag": 41,
                 "ActionTag": -762678863,
                 "Size": {
                   "X": 67.0,
                   "Y": 67.0
                 },
-                "Name": "Button5",
+                "Name": "Button2",
                 "ctype": "ButtonObjectData"
               },
               {
@@ -354,17 +355,17 @@
                 "TextColor": {},
                 "DisabledFileData": {
                   "Type": "Normal",
-                  "Path": "PIC6.png",
+                  "Path": "menu/PIC6.png",
                   "Plist": ""
                 },
                 "PressedFileData": {
                   "Type": "Normal",
-                  "Path": "PIC6.png",
+                  "Path": "menu/PIC6.png",
                   "Plist": ""
                 },
                 "NormalFileData": {
                   "Type": "Normal",
-                  "Path": "PIC5.png",
+                  "Path": "menu/PIC5.png",
                   "Plist": ""
                 },
                 "Scale9Enable": true,
@@ -389,35 +390,35 @@
                   "ScaleY": 0.5
                 },
                 "Position": {
-                  "X": 163.6152,
-                  "Y": 27.0175
+                  "X": 139.1868,
+                  "Y": 26.2209
                 },
                 "Scale": {
-                  "ScaleX": 1.0,
+                  "ScaleX": 1.7587,
                   "ScaleY": 1.0
                 },
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
-                  "X": 0.8181,
-                  "Y": 0.1351
+                  "X": 0.6959,
+                  "Y": 0.1311
                 },
                 "PreSize": {
                   "X": 0.335,
                   "Y": 0.335
                 },
-                "LeftMargin": 130.1152,
-                "RightMargin": 2.8848,
-                "TopMargin": 139.4825,
-                "BottomMargin": -6.4825,
+                "LeftMargin": 105.6868,
+                "RightMargin": 27.3132,
+                "TopMargin": 140.2791,
+                "BottomMargin": -7.2791,
                 "CallBackType": "Click",
-                "Tag": 52,
+                "Tag": 42,
                 "ActionTag": 1621821697,
                 "Size": {
                   "X": 67.0,
                   "Y": 67.0
                 },
-                "Name": "Button6",
+                "Name": "Button3",
                 "ctype": "ButtonObjectData"
               }
             ],
@@ -438,10 +439,10 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "PIC1.png",
-        "PIC2.png",
-        "PIC5.png",
-        "PIC6.png"
+        "menu/PIC1.png",
+        "menu/PIC2.png",
+        "menu/PIC5.png",
+        "menu/PIC6.png"
       ],
       "ctype": "GameFileData"
     }
