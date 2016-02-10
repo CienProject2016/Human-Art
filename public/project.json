@@ -4,14 +4,17 @@
     "id"            : "gameCanvas",
     "renderMode"    : 1,
     "jsList"        : [
-        "src/login.js",
-        "src/ElectricPower.js",
-        "src/Score.js",
-        "src/Tool.js",
-        "src/User.js",        	
-		"src/Component.js",	  
-        "src/Ui.js",
-        "src/Board.js",
+        "src/util/ResourceManager.js",
+        "src/io/login.js",
+		"src/model/Component.js",	  
+        "src/model/ElectricPower.js",
+        "src/model/Score.js",
+        "src/model/Tool.js",
+        "src/model/User.js",        	
+        "src/model/Listener.js",
+        "src/layer/Ui.js",
+        "src/layer/Field.js",
+        "src/layer/Board.js",
         "src/main.js"
     ]
 }

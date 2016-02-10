@@ -2,7 +2,7 @@ var Component = cc.Layer.extend({
     node :null,
     ctor: function (type) {
         this._super();
-        var component = ccs.load("res/" + type + ".json");
+        var component = ccs.load("res/minions/" + type + ".json");
         if (!(component.action && component.node)) {
             console.log("Component " + type + ".json 가 없습니다.");
             return;

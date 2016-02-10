@@ -2,7 +2,7 @@ var Tool = cc.Sprite.extend({
     requiredElectricPower: null,
     name : "",
     ctor: function (name) {
-        this._super("res/" + name + ".png");
+        this._super("res/tools/" + name + ".png");
         this.name = name;
         var ref = this;
         ref.visible = false;
