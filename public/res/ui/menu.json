@@ -17,7 +17,7 @@
           {
             "FileData": {
               "Type": "Normal",
-              "Path": "PIC1.png",
+              "Path": "menu/PIC1.png",
               "Plist": ""
             },
             "BlendFunc": {
@@ -69,17 +69,17 @@
             },
             "DisabledFileData": {
               "Type": "Normal",
-              "Path": "PIC6.png",
+              "Path": "menu/PIC6.png",
               "Plist": ""
             },
             "PressedFileData": {
               "Type": "Normal",
-              "Path": "PIC6.png",
+              "Path": "menu/PIC6.png",
               "Plist": ""
             },
             "NormalFileData": {
               "Type": "Normal",
-              "Path": "PIC5.png",
+              "Path": "menu/PIC5.png",
               "Plist": ""
             },
             "Scale9Enable": true,
@@ -131,7 +131,7 @@
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "PIC2.png",
+                  "Path": "menu/PIC2.png",
                   "Plist": ""
                 },
                 "BlendFunc": {
@@ -188,17 +188,17 @@
             "TextColor": {},
             "DisabledFileData": {
               "Type": "Normal",
-              "Path": "PIC6.png",
+              "Path": "menu/PIC6.png",
               "Plist": ""
             },
             "PressedFileData": {
               "Type": "Normal",
-              "Path": "PIC6.png",
+              "Path": "menu/PIC6.png",
               "Plist": ""
             },
             "NormalFileData": {
               "Type": "Normal",
-              "Path": "PIC5.png",
+              "Path": "menu/PIC5.png",
               "Plist": ""
             },
             "Scale9Enable": true,
@@ -260,17 +260,17 @@
             "TextColor": {},
             "DisabledFileData": {
               "Type": "Normal",
-              "Path": "PIC6.png",
+              "Path": "menu/PIC6.png",
               "Plist": ""
             },
             "PressedFileData": {
               "Type": "Normal",
-              "Path": "PIC6.png",
+              "Path": "menu/PIC6.png",
               "Plist": ""
             },
             "NormalFileData": {
               "Type": "Normal",
-              "Path": "PIC5.png",
+              "Path": "menu/PIC5.png",
               "Plist": ""
             },
             "Scale9Enable": true,
@@ -335,10 +335,10 @@
         "ctype": "LayerObjectData"
       },
       "UsedResources": [
-        "PIC1.png",
-        "PIC2.png",
-        "PIC5.png",
-        "PIC6.png"
+        "menu/PIC1.png",
+        "menu/PIC2.png",
+        "menu/PIC5.png",
+        "menu/PIC6.png"
       ],
       "ctype": "GameFileData"
     }

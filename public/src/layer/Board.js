@@ -34,10 +34,10 @@ var Board = cc.Layer.extend({
         bgSprite.setScale(1.0);
 
         // UI
-        var ui = new Ui("menu2");
+        var ui = new Ui("menu");
         this.addChild(ui);
 
-        var item = new Ui("item2");
+        var item = new Ui("item");
         this.addChild(item);
 
         item.visible = false;
@@ -47,9 +47,6 @@ var Board = cc.Layer.extend({
 
         var button2 = ui.children[0].children[3];
         cc.eventManager.addListener(cc.EventListener.create(menuListener(item)), button2);
-
-        var button3 = ui.children[0].children[4];
-        cc.eventManager.addListener(cc.EventListener.create(menuListener(item)), button3);
 
         var backButton = item.children[0].children[9];
         cc.eventManager.addListener(cc.EventListener.create(menuListener(item)), backButton);

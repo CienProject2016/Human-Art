@@ -1,7 +1,7 @@
 {
   "ID": "ea50cbb2-3e5d-4be6-9edd-df034f25f5de",
   "Version": "2.3.4",
-  "Name": "item2",
+  "Name": "item",
   "Content": {
     "Content": {
       "Animation": {
@@ -59,8 +59,8 @@
               "ScaleY": 0.5
             },
             "Position": {
-              "X": 982.6674,
-              "Y": 859.33
+              "X": 986.5654,
+              "Y": 859.3298
             },
             "Scale": {
               "ScaleX": 0.8101,
@@ -69,17 +69,17 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.5118,
+              "X": 0.5138,
               "Y": 0.7957
             },
             "PreSize": {
               "X": 0.0917,
               "Y": 0.1139
             },
-            "LeftMargin": 894.6674,
-            "RightMargin": 849.3326,
-            "TopMargin": 159.17,
-            "BottomMargin": 797.83,
+            "LeftMargin": 898.5654,
+            "RightMargin": 845.4346,
+            "TopMargin": 159.1702,
+            "BottomMargin": 797.8298,
             "Tag": 101,
             "ActionTag": 1596610864,
             "Size": {
@@ -302,7 +302,7 @@
               "Y": 0.1139
             },
             "LeftMargin": 894.6674,
-            "RightMargin": 849.3326,
+            "RightMargin": 849.3325,
             "TopMargin": 380.0934,
             "BottomMargin": 576.9066,
             "Tag": 104,
@@ -377,7 +377,7 @@
               "Y": 0.1139
             },
             "LeftMargin": 894.6674,
-            "RightMargin": 849.3326,
+            "RightMargin": 849.3325,
             "TopMargin": 601.0273,
             "BottomMargin": 355.9727,
             "Tag": 107,
