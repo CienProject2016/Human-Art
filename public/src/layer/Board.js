@@ -19,16 +19,19 @@ var Board = cc.Layer.extend({
         var size = cc.director.getWinSize();
         
         // Color Background
+              
         var bgSprite = cc.Sprite.create("res/images/colorbg.jpg");
-        bgSprite.setPosition(size.width / 2, size.height / 8);
+        bgSprite.setPosition(size.width / 2,  -size.height*1.2);
+     
 
-        var movebg = cc.MoveBy.create(10, cc.p(0, size.height));
-        var movebg1 = cc.MoveBy.create(0, cc.p(0, -size.height));
+        var movebg = cc.MoveBy.create(10, cc.p(0, size.height*3.5));
+        var movebg1 = cc.MoveBy.create(0, cc.p(0, -size.height*3.5));
         var bgsequence = cc.Sequence.create(movebg, movebg1);
         bgSprite.runAction(bgsequence).repeatForever();
-
-        bgSprite.setScale(1.0);
         this.addChild(bgSprite);
+        
+     
+        bgSprite.setScale(1.0);
 
         // UI
         var ui = new Ui("menu");
