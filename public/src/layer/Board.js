@@ -61,7 +61,6 @@ var Board = cc.Layer.extend({
 
         //ActiveItem (Temporary)
         var activeItem = new ActiveItem("generator");
-        console.log(activeItem.name);
         activeItem.setListener();
         activeItem.setPosition(size.width / 10, size.height * 1/4);
         this.addChild(activeItem, 15, "activeItem");

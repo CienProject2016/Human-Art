@@ -3,7 +3,6 @@ var ActiveItem = cc.Sprite.extend({
     ctor: function (name) {
         this._super("res/activeItem/" + name + ".png");
         this.name = name;
-        console.log(this.name);
     },
     setListener : function(){
         switch(this.name){
