@@ -4,7 +4,6 @@
     "id"            : "gameCanvas",
     "renderMode"    : 1,
     "jsList"        : [
-        "src/util/ResourceManager.js",
         "src/io/login.js",
         "src/controller/ActiveItemController.js",
 		"src/model/Component.js",	  
