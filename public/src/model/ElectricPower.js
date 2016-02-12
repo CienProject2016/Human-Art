@@ -5,4 +5,7 @@ var ElectricPower = function(currentElectricPower) {
     this.getCurrentElectricPower = function(){
         return this.currentElectricPower;
     }
+    this.setCurrentElectricPower = function(electricPower){
+        this.currentElectricPower = electricPower;
+    }
 }

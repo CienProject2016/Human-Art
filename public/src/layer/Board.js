@@ -34,6 +34,7 @@ var Board = cc.Layer.extend({
         var ui = new Ui("menu");
         this.addChild(ui);
 
+        // TOOL
         this.usingTool = User.usingTool;
         this.makeUsingTool();
         this.makeToolInventory();
@@ -57,6 +58,14 @@ var Board = cc.Layer.extend({
         this.electricPowerLabel = cc.LabelTTF.create(User.electricPower.getCurrentElectricPower(), "Arial", 80);
         this.electricPowerLabel.setPosition(size.width / 10, size.height * 14 / 15);
         this.addChild(this.electricPowerLabel, 1);
+
+        //ActiveItem (Temporary)
+        var activeItem = new ActiveItem("generator");
+        console.log(activeItem.name);
+        activeItem.setListener();
+        activeItem.setPosition(size.width / 10, size.height * 1/4);
+        this.addChild(activeItem, 15, "activeItem");
+
 
         //add using Tool cursor 
         this.addChild(this.usingTool, 999, "usingTool");
