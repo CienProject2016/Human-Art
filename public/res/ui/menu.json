@@ -1,0 +1,347 @@
+{
+  "ID": "8e2e4fc8-8ba3-45f4-bd13-28eae88fe08e",
+  "Version": "2.3.4",
+  "Name": "menu",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 45,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "PIC1.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 88.6038,
+              "Y": 1001.285
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.3944
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0461,
+              "Y": 0.9271
+            },
+            "PreSize": {
+              "X": 0.0333,
+              "Y": 0.0657
+            },
+            "LeftMargin": 56.6038,
+            "RightMargin": 1799.3962,
+            "TopMargin": 43.215,
+            "BottomMargin": 965.785,
+            "Tag": 47,
+            "ActionTag": -334305033,
+            "Size": {
+              "X": 64.0,
+              "Y": 71.0
+            },
+            "Name": "PIC1_2",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "PIC6.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "PIC6.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "PIC5.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 37,
+            "Scale9Height": 45,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1839.5731,
+              "Y": 636.0636
+            },
+            "Scale": {
+              "ScaleX": 1.7587,
+              "ScaleY": 1.8763
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9581,
+              "Y": 0.5889
+            },
+            "PreSize": {
+              "X": 0.0349,
+              "Y": 0.062
+            },
+            "LeftMargin": 1806.0731,
+            "RightMargin": 46.9269,
+            "TopMargin": 410.4364,
+            "BottomMargin": 602.5636,
+            "CallBackType": "Click",
+            "Tag": 40,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "Normal",
+                  "Path": "PIC2.png",
+                  "Plist": ""
+                },
+                "BlendFunc": {
+                  "Src": 1,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 32.5142,
+                  "Y": 33.9431
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4853,
+                  "Y": 0.5066
+                },
+                "PreSize": {
+                  "X": 0.3582,
+                  "Y": 0.4179
+                },
+                "LeftMargin": 20.5142,
+                "RightMargin": 22.4858,
+                "TopMargin": 19.0569,
+                "BottomMargin": 19.9431,
+                "Tag": 50,
+                "ActionTag": -1440347125,
+                "Size": {
+                  "X": 24.0,
+                  "Y": 28.0
+                },
+                "Name": "PIC2",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": 833555291,
+            "Size": {
+              "X": 67.0,
+              "Y": 67.0
+            },
+            "Name": "Button1",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 20,
+            "ButtonText": "I",
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "PIC6.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "PIC6.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "PIC5.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 37,
+            "Scale9Height": 45,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 1839.5731,
+              "Y": 495.3388
+            },
+            "Scale": {
+              "ScaleX": 1.7587,
+              "ScaleY": 1.8763
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9581,
+              "Y": 0.4586
+            },
+            "PreSize": {
+              "X": 0.0349,
+              "Y": 0.062
+            },
+            "LeftMargin": 1806.0731,
+            "RightMargin": 46.9269,
+            "TopMargin": 551.1613,
+            "BottomMargin": 461.8388,
+            "CallBackType": "Click",
+            "Tag": 41,
+            "ActionTag": -762678863,
+            "Size": {
+              "X": 67.0,
+              "Y": 67.0
+            },
+            "Name": "Button2",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 20,
+            "ButtonText": "M",
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "PIC6.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "PIC6.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "PIC5.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 37,
+            "Scale9Height": 45,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.4523,
+              "ScaleY": 0.4842
+            },
+            "Position": {
+              "X": 1833.9536,
+              "Y": 350.8833
+            },
+            "Scale": {
+              "ScaleX": 1.7587,
+              "ScaleY": 1.8763
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9552,
+              "Y": 0.3249
+            },
+            "PreSize": {
+              "X": 0.0349,
+              "Y": 0.062
+            },
+            "LeftMargin": 1803.6495,
+            "RightMargin": 49.3505,
+            "TopMargin": 694.5581,
+            "BottomMargin": 318.4419,
+            "CallBackType": "Click",
+            "Tag": 42,
+            "ActionTag": 1621821697,
+            "Size": {
+              "X": 67.0,
+              "Y": 67.0
+            },
+            "Name": "Button3",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 1920.0,
+          "Y": 1080.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "PIC1.png",
+        "PIC2.png",
+        "PIC5.png",
+        "PIC6.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}
