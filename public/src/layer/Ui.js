@@ -5,12 +5,13 @@ var Ui = cc.Layer.extend({
         var ui = ccs.load("res/ui/" + type + ".json");
         if (!(ui.node)) {
             console.log("Ui " + type + ".json 가 없습니다.");
+            
             return;
         }
-           
-        this.node = ui.node;
         
-        this.addChild(this.node);
+      this.node = ui.node;
+      this.addChild(this.node);
+              
         return true;
-    }
+      }
 });

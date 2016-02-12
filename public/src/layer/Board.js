@@ -31,16 +31,36 @@ var Board = cc.Layer.extend({
         this.addChild(bgSprite);
 
         // UI
-        var ui = new Ui("menu");
+        var ui = new Ui("menu2");
         this.addChild(ui);
 
-        this.usingTool = User.usingTool;
-        this.makeUsingTool();
-        this.makeToolInventory();
-        
+        var item = new Ui("item2");
+        this.addChild(item);
+
+        item.visible = false;
+
+        var button1 = ui.children[0].children[2];
+        cc.eventManager.addListener(cc.EventListener.create(menuListener(item)), button1);
+
+        var button2 = ui.children[0].children[3];
+        cc.eventManager.addListener(cc.EventListener.create(menuListener(item)), button2);
+
+        var button3 = ui.children[0].children[4];
+        cc.eventManager.addListener(cc.EventListener.create(menuListener(item)), button3);
+
+        var backButton = item.children[0].children[9];
+        cc.eventManager.addListener(cc.EventListener.create(menuListener(item)), backButton);
+
+        this.electricPowerLabel = cc.LabelTTF.create(User.electricPower.getCurrentElectricPower(), "Arial", 80);
+        this.electricPowerLabel.setPosition(size.width / 10, size.height * 14 / 15);
+        this.addChild(this.electricPowerLabel, 1);
+
         // Field
         this.field = new Field("field");
         this.addChild(this.field);
+        for (var i = 0; i < this.field.getMinionsNum(); i++) {
+            this.addChild(this.field.getMinion(i));
+        }
 
         // Components
         var component = new Component("hourse");
@@ -53,17 +73,13 @@ var Board = cc.Layer.extend({
         cc.eventManager.addListener(cc.EventListener.create(minionListener()), component2);
         this.addChild(component2);
 
-
-        this.electricPowerLabel = cc.LabelTTF.create(User.electricPower.getCurrentElectricPower(), "Arial", 80);
-        this.electricPowerLabel.setPosition(size.width / 10, size.height * 14 / 15);
-        this.addChild(this.electricPowerLabel, 1);
+        // Tool
+        this.usingTool = User.usingTool;
+        this.makeUsingTool();
+        this.makeToolInventory();
 
         //add using Tool cursor 
         this.addChild(this.usingTool, 999, "usingTool");
-
-        for (var i = 0; i < this.field.getMinionsNum(); i++) {
-            this.addChild(this.field.getMinion(i));
-        }
 
         this.scheduleUpdate();
     },
