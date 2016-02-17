@@ -18,8 +18,8 @@ function minionListener() {
                     target.stopAllActions(); //상하좌우 움직임 멈춤
                 }
                 else if (target.stateOfMinion == 2) { //마취제 맞은 상태
-                   target.stopAllActions();
-                   target.paralyze(); //팔다리 움직임 멈춤
+                    target.stopAllActions();
+                    target.paralyze(); //팔다리 움직임 멈춤
 
                 }
                 cc.log("sprite began... x = " + locationInNode.x + ", y = " + locationInNode.y);
@@ -41,29 +41,24 @@ function minionListener() {
     };
 }
 
-function toolListener(board, toolName) {
-
+function onChangeToolListener(board, toolName) {
     return {
         event: cc.EventListener.TOUCH_ONE_BY_ONE,
         swallowTouches: true,
         onTouchBegan: function (touch, event) {
-
             var target = event.getCurrentTarget();
-
             var locationInNode = target.convertToNodeSpace(touch.getLocation());
             var s = target.getContentSize();
-
             var rect = cc.rect(0, 0, s.width, s.height);
 
             if (cc.rectContainsPoint(rect, locationInNode)) {
-                var usedTool = board.getChildByName("usingTool");
-                usedTool.setTexture("res/tools/" + toolName + ".png");
-                usedTool.name = toolName;
-                User.usingTool = usedTool;
+                User.usingTool = new Tool(toolName);
+                var usingTool = board.getChildByName("usingTool");
+                usingTool.setTexture("res/tools/" + User.usingTool.name + ".png")
+
                 return true;
             }
             return false;
-
         },
         onTouchMoved: function (touch, event) {
 

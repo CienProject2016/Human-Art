@@ -4,9 +4,9 @@ var Board = cc.Layer.extend({
     componentList: [],
     electricPowerLabel: 0,
     userList: [],
-    usingTool: null,
     usingToolImage: null,
     field: null,
+
 
     ctor: function (boardId) {
         this._super();
@@ -55,6 +55,11 @@ var Board = cc.Layer.extend({
         this.electricPowerLabel.setPosition(size.width / 10, size.height * 14 / 15);
         this.addChild(this.electricPowerLabel, 1);
 
+        // TOOL
+        this.makeUsingTool();
+        this.makeToolInventory();
+        this.addChild(User.usingTool, 999, "usingTool");
+        
         // Field
         this.field = new Field("field");
         this.addChild(this.field);
@@ -78,17 +83,18 @@ var Board = cc.Layer.extend({
         this.makeUsingTool();
         this.makeToolInventory();
 
-        //add using Tool cursor 
-        this.addChild(this.usingTool, 999, "usingTool");
+        // ActiveItem (Temporary)
+        var activeItem = new ActiveItem("generator");
+        console.log(activeItem.name);
+        activeItem.setListener();
+        activeItem.setPosition(size.width / 10, size.height * 1 / 4);
+        this.addChild(activeItem, 15, "activeItem");
 
         this.scheduleUpdate();
     },
 
     update: function (delta) {
-        var usingToolInBoard = this.getChildByName("usingTool");
-        this.usingTool = usingToolInBoard;
-        this.usingToolImage = this.getChildByName("usingToolImage");
-        this.usingToolImage.setTexture("res/tools/" + this.usingTool.name + ".png");
+        this.usingToolImage.setTexture("res/tools/" + User.usingTool.name + ".png");
         this.electricPowerLabel.setString(User.electricPower.getCurrentElectricPower());
 
         this.field.update(delta);
@@ -103,13 +109,19 @@ var Board = cc.Layer.extend({
         //추후 리스트에서 뽑아올 것
         var hand = cc.Sprite.create("res/tools/hand.png");
         hand.setPosition(cc.p(size.width * 7 / 10, size.height * 3 / 19));
-        cc.eventManager.addListener(cc.EventListener.create(toolListener(this, "hand")), hand);
+        cc.eventManager.addListener(cc.EventListener.create(onChangeToolListener(this, "hand")), hand);
         this.addChild(hand, 9);
 
         var bomb = cc.Sprite.create("res/tools/bomb.png");
         this.addChild(bomb, 10);
         bomb.setPosition(cc.p(size.width * 8 / 10, size.height * 3 / 19));
-        cc.eventManager.addListener(cc.EventListener.create(toolListener(this, "bomb")), bomb);
+        cc.eventManager.addListener(cc.EventListener.create(onChangeToolListener(this, "bomb")), bomb);
+
+        var absorber = cc.Sprite.create("res/tools/absorber.png");
+        this.addChild(absorber, 11);
+        absorber.setPosition(cc.p(size.width * 9 / 10, size.height * 3 / 19));
+        cc.eventManager.addListener(cc.EventListener.create(onChangeToolListener(this, "absorber")), absorber);
+        absorber.setScale(0.40);
     },
 
     makeUsingTool: function () {
@@ -143,7 +155,7 @@ var Board = cc.Layer.extend({
     },
 
     onTouchEnded: function (touch, event) {
-    }
+    },
 });
 
 Board.scene = function (boardId) {
@@ -153,4 +165,3 @@ Board.scene = function (boardId) {
 
     return scene;
 };
-
