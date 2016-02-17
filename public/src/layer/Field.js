@@ -27,21 +27,23 @@ var Field = cc.Layer.extend({
             var mas = (size.width - x) / size.width * ms
             var m2s = x / size.width * ms;
 
-            var move = cc.MoveBy.create(mas, cc.p(size.width - x, y));
-            var moveaway = cc.MoveBy.create(ms, cc.p(-size.width, -y));
-            var move2 = cc.MoveBy.create(m2s, cc.p(x, y));
+            var move = cc.MoveBy.create(5, cc.p(size.width - x, y));
+            var moveaway = cc.MoveBy.create(5, cc.p(-size.width, -y));
+            var move2 = cc.MoveBy.create(5, cc.p(x, y));
 
             var minSeq = cc.Sequence.create(move, moveaway, move2);
 
             this.minions[i].runAction(minSeq).repeatForever();
 
             this.addChild(this.minions[i], 500);
+               cc.eventManager.addListener(cc.EventListener.create(minionListener()),this.minions[i]);
+         
         }
     },
     update: function (delta) {
         this.minions.forEach(function (minion) {
             var p = minion.getPosition();
-            if (p.y > 400) {
+            if (p.y > 350) {
                 minion.runAction(cc.MoveBy.create(0, cc.p(0, -100)));
             }
             if (p.y < 0) {
