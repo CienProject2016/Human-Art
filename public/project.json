@@ -5,6 +5,9 @@
     "renderMode"    : 1,
     "jsList"        : [
         "src/io/login.js",
+        "src/listener/Listener.js",
+        "src/listener/ActiveItemListener.js",
+        "src/listener/ToolListener.js",
         "src/controller/ActiveItemController.js",
 		"src/model/Component.js",	  
         "src/model/ElectricPower.js",
@@ -12,8 +15,6 @@
         "src/model/Tool.js",
         "src/model/User.js",     
         "src/model/ActiveItem.js",   	
-        "src/listener/Listener.js",
-        "src/listener/ActiveItemListener.js",
         "src/layer/Ui.js",
         "src/layer/Field.js",
         "src/layer/Board.js",
