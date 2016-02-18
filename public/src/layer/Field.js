@@ -6,7 +6,7 @@ var Field = cc.Layer.extend({
         this._super();
         cc.loader.loadJson("res/json/" + fieldId + ".json", this.init.bind(this));
     },
-    
+
     init: function (error, data) {
         if (error) {
             console.log(error);
@@ -35,9 +35,8 @@ var Field = cc.Layer.extend({
 
             this.minions[i].runAction(minSeq).repeatForever();
 
-            this.addChild(this.minions[i], 500);
-               cc.eventManager.addListener(cc.EventListener.create(minionListener()),this.minions[i]);
-         
+            this.addChild(this.minions[i]);
+            cc.eventManager.addListener(cc.EventListener.create(minionListener()), this.minions[i]);
         }
     },
     update: function (delta) {

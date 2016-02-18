@@ -6,6 +6,7 @@
     "modules" : ["cocos2d", "extensions", "external"],
     "jsList"        : [
         "src/io/login.js",
+        "src/model/enums.js",
         "src/listener/Listener.js",
         "src/listener/ActiveItemListener.js",
         "src/listener/ToolListener.js",

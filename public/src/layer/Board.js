@@ -19,7 +19,6 @@ var Board = cc.Layer.extend({
         var size = cc.director.getWinSize();
         
         // Color Background
-              
         var bgSprite = cc.Sprite.create("res/images/colorbg.jpg");
         bgSprite.setPosition(size.width / 2,  -size.height*1.2);
      
@@ -28,55 +27,22 @@ var Board = cc.Layer.extend({
         var movebg1 = cc.MoveBy.create(0, cc.p(0, -size.height*3.5));
         var bgsequence = cc.Sequence.create(movebg, movebg1);
         bgSprite.runAction(bgsequence).repeatForever();
-        this.addChild(bgSprite);
+        this.addChild(bgSprite, ZORDER.BACKGROUND);
         
-     
         bgSprite.setScale(1.0);
-
-        // UI
-        var ui = new Ui("menu");
-        this.addChild(ui);
-
-        var item = new Ui("item");
-        this.addChild(item);
-
-        item.visible = false;
-
-        var button1 = ui.children[0].children[2];
-        cc.eventManager.addListener(cc.EventListener.create(menuListener(item)), button1);
-
-        var button2 = ui.children[0].children[3];
-        cc.eventManager.addListener(cc.EventListener.create(menuListener(item)), button2);
-
-        var backButton = item.children[0].children[9];
-        cc.eventManager.addListener(cc.EventListener.create(menuListener(item)), backButton);
 
         this.electricPowerLabel = cc.LabelTTF.create(User.electricPower.getCurrentElectricPower(), "Arial", 80);
         this.electricPowerLabel.setPosition(size.width / 10, size.height * 14 / 15);
-        this.addChild(this.electricPowerLabel, 1);
+        this.addChild(this.electricPowerLabel, ZORDER.UI);
 
         // TOOL
         this.makeUsingTool();
         this.makeToolInventory();
-        this.addChild(User.usingTool, 999, "usingTool");
+        this.addChild(User.usingTool, ZORDER.UI, "usingTool");
         
         // Field
         this.field = new Field("field");
-        this.addChild(this.field);
-        for (var i = 0; i < this.field.getMinionsNum(); i++) {
-            this.addChild(this.field.getMinion(i));
-        }
-
-        // Components
-        var component = new Component("hourse");
-        if (component.childrenCount != 0) {
-            cc.eventManager.addListener(cc.EventListener.create(minionListener()), component);
-            this.addChild(component);
-        }
-
-        var component2 = new Component("skeleton1");
-        cc.eventManager.addListener(cc.EventListener.create(minionListener()), component2);
-        this.addChild(component2);
+        this.addChild(this.field, ZORDER.FIELD);
 
         // Tool
         this.usingTool = User.usingTool;
@@ -88,7 +54,7 @@ var Board = cc.Layer.extend({
         console.log(activeItem.name);
         activeItem.setListener();
         activeItem.setPosition(size.width / 10, size.height * 1 / 4);
-        this.addChild(activeItem, 15, "activeItem");
+        this.addChild(activeItem, ZORDER.ACTIVEITEM, "activeItem");
 
         this.scheduleUpdate();
     },
