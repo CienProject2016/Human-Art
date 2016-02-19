@@ -1,30 +1,56 @@
-var Component = cc.Layer.extend({
-    node: null,
-    action: null,
+var Component = cc.Node.extend({
+    ref: null,
     stateOfMinion: 3,
-    paralyze: function() {
-        this.action.gotoFrameAndPlay(0, false);
-    },
     ctor: function (type) {
         this._super();
-        var component = ccs.load("res/minions/" + type + ".json");
-        if (!(component.action && component.node)) {
+        this.ref = this;
+        
+        var res = ccs.load("res/minions/" + type + ".json");
+        
+        if (!(res.action && res.node)) {
             console.log("Component " + type + ".json 가 없습니다.");
             return;
         }
 
-        this.action = component.action;
-
-        if (this.action) {
-            component.node.runAction(this.action);
-            this.action.gotoFrameAndPlay(0, true);
+        if (res.action) {
+            res.node.runAction(res.action);
+            res.action.gotoFrameAndPlay(0, true);
         }
 
-        this.node = component.node;
-
-        this.width = 500;
-        this.height = 500;
-        this.addChild(this.node, 200);
+        this.addChild(res.node);
+        
         return true;
+    },
+    getBodyBone: function() {
+        return this.ref.children[0].children[0];  
+    },
+    getBodySprite: function() {
+        return this.getBodyBone().children[5];
+    },
+    getLeftArmSprite: function() {
+        return this.getBodyBone().children[0].children[0];
+    },
+    getRightArmSprite: function() {
+        return this.getBodyBone().children[1].children[0];
+    },
+    getLeftLegSprite: function() {
+        return this.getBodyBone().children[2].children[0];
+    },
+    getRightLegSprite: function() {
+        return this.getBodyBone().children[3].children[0];
+    },
+    getHeadSprite: function() {
+        return this.getBodyBone().children[4].children[0];
+    },
+    addListener: function(listener) {
+        cc.eventManager.addListener(minionListener(this), this.getBodySprite());
+        cc.eventManager.addListener(minionListener(this), this.getLeftArmSprite());
+        cc.eventManager.addListener(minionListener(this), this.getRightArmSprite());
+        cc.eventManager.addListener(minionListener(this), this.getLeftLegSprite());
+        cc.eventManager.addListener(minionListener(this), this.getRightLegSprite());
+        cc.eventManager.addListener(minionListener(this), this.getHeadSprite());
+    },
+    paralyze: function() {
+        // this.action.gotoFrameAndPlay(0, false);
     }
 });

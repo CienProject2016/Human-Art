@@ -1,6 +1,6 @@
 var g_mainmenu = [
-    "res/minions/Hero.json","res/minions/hourse.json", "res/minions/skeleton1.json","res/ui/menu.json", "res/ui/item.json"
-]   
+    "res/minions/Test.json", "res/minions/hourse.json", "res/minions/skeleton1.json", "res/ui/menu.json", "res/ui/item.json"
+]
 
 window.onload = function () {
     cc.game.onStart = function () {
@@ -14,8 +14,8 @@ window.onload = function () {
         cc.LoaderScene.preload(g_mainmenu, function () {
             //when login is completed
             //get boardId
-            var exampleId = "Sebin"; 
-            var exampleBoardId = 239483;     
+            var exampleId = "Sebin";
+            var exampleBoardId = 239483;
             var exampleSession = "2adfn3o1kolmadfndflk33";
             
             //User is singleton

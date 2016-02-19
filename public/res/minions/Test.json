@@ -1,96 +1,20 @@
 {
-  "ID": "66a92153-38c0-4150-abe5-2beed9e9f9f3",
-  "Version": "2.3.3.0",
-  "Name": "Hero",
+  "ID": "b474a8e3-09fc-4008-85f0-e75cb18a9040",
+  "Version": "3.10.0.0",
+  "Name": "Test",
   "Content": {
     "Content": {
       "Animation": {
-        "Duration": 15,
-        "Speed": 0.4,
-        "ActivedAnimationName": "animation0",
+        "Duration": 10,
+        "Speed": 1.0,
         "Timelines": [
           {
-            "ActionTag": 1906323727,
+            "ActionTag": -1336869108,
             "Property": "Position",
             "Frames": [
               {
-                "X": 145.6083,
-                "Y": 1.7564,
-                "FrameIndex": 5,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "PointFrameData"
-              },
-              {
-                "X": 149.0418,
-                "Y": -3.56,
-                "FrameIndex": 15,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "PointFrameData"
-              }
-            ],
-            "ctype": "TimelineData"
-          },
-          {
-            "ActionTag": 1906323727,
-            "Property": "Scale",
-            "Frames": [
-              {
-                "X": 1.0,
-                "Y": 1.0,
-                "FrameIndex": 5,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": 1.0,
-                "Y": 1.0,
-                "FrameIndex": 15,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              }
-            ],
-            "ctype": "TimelineData"
-          },
-          {
-            "ActionTag": 1906323727,
-            "Property": "RotationSkew",
-            "Frames": [
-              {
-                "X": -497.8526,
-                "Y": 222.1467,
-                "FrameIndex": 5,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": -497.8526,
-                "Y": 222.1467,
-                "FrameIndex": 15,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              }
-            ],
-            "ctype": "TimelineData"
-          },
-          {
-            "ActionTag": 1201444759,
-            "Property": "Position",
-            "Frames": [
-              {
-                "X": 205.6895,
-                "Y": -110.6773,
+                "X": 12.6918,
+                "Y": -60.932,
                 "FrameIndex": 0,
                 "EasingData": {
                   "Type": 0
@@ -98,8 +22,8 @@
                 "ctype": "PointFrameData"
               },
               {
-                "X": 197.7523,
-                "Y": -98.249,
+                "X": 12.6918,
+                "Y": -60.932,
                 "FrameIndex": 5,
                 "EasingData": {
                   "Type": 0
@@ -107,18 +31,9 @@
                 "ctype": "PointFrameData"
               },
               {
-                "X": 205.6895,
-                "Y": -110.6773,
+                "X": 12.6918,
+                "Y": -60.932,
                 "FrameIndex": 10,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "PointFrameData"
-              },
-              {
-                "X": 197.7523,
-                "Y": -98.249,
-                "FrameIndex": 15,
                 "EasingData": {
                   "Type": 0
                 },
@@ -128,7 +43,7 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": 1201444759,
+            "ActionTag": -1336869108,
             "Property": "Scale",
             "Frames": [
               {
@@ -157,26 +72,17 @@
                   "Type": 0
                 },
                 "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": 1.0,
-                "Y": 1.0,
-                "FrameIndex": 15,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
               }
             ],
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": 1201444759,
+            "ActionTag": -1336869108,
             "Property": "RotationSkew",
             "Frames": [
               {
-                "X": 62.1164,
-                "Y": 62.1164,
+                "X": 16.4257,
+                "Y": 16.4257,
                 "FrameIndex": 0,
                 "EasingData": {
                   "Type": 0
@@ -184,8 +90,8 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": 134.8368,
-                "Y": 134.8368,
+                "X": 52.9976,
+                "Y": 52.9976,
                 "FrameIndex": 5,
                 "EasingData": {
                   "Type": 0
@@ -193,18 +99,9 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": 62.1164,
-                "Y": 62.1164,
+                "X": 20.8048,
+                "Y": 20.8048,
                 "FrameIndex": 10,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": 134.8368,
-                "Y": 134.8368,
-                "FrameIndex": 15,
                 "EasingData": {
                   "Type": 0
                 },
@@ -214,12 +111,12 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": 517699101,
+            "ActionTag": 2049542995,
             "Property": "Position",
             "Frames": [
               {
-                "X": 203.6051,
-                "Y": 74.6754,
+                "X": 20.3405,
+                "Y": 65.4944,
                 "FrameIndex": 0,
                 "EasingData": {
                   "Type": 0
@@ -227,8 +124,8 @@
                 "ctype": "PointFrameData"
               },
               {
-                "X": 203.6051,
-                "Y": 74.6754,
+                "X": 20.3405,
+                "Y": 65.4944,
                 "FrameIndex": 5,
                 "EasingData": {
                   "Type": 0
@@ -236,18 +133,9 @@
                 "ctype": "PointFrameData"
               },
               {
-                "X": 203.6051,
-                "Y": 74.6754,
+                "X": 20.3405,
+                "Y": 65.4944,
                 "FrameIndex": 10,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "PointFrameData"
-              },
-              {
-                "X": 203.6051,
-                "Y": 74.6754,
-                "FrameIndex": 15,
                 "EasingData": {
                   "Type": 0
                 },
@@ -257,7 +145,7 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": 517699101,
+            "ActionTag": 2049542995,
             "Property": "Scale",
             "Frames": [
               {
@@ -286,26 +174,17 @@
                   "Type": 0
                 },
                 "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": 1.0,
-                "Y": 1.0,
-                "FrameIndex": 15,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
               }
             ],
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": 517699101,
+            "ActionTag": 2049542995,
             "Property": "RotationSkew",
             "Frames": [
               {
-                "X": -124.0934,
-                "Y": -124.0934,
+                "X": -15.4207,
+                "Y": -15.4207,
                 "FrameIndex": 0,
                 "EasingData": {
                   "Type": 0
@@ -313,8 +192,8 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": -65.6906,
-                "Y": -65.6906,
+                "X": -77.72,
+                "Y": -77.72,
                 "FrameIndex": 5,
                 "EasingData": {
                   "Type": 0
@@ -322,18 +201,9 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": -124.0934,
-                "Y": -124.0934,
+                "X": -27.143,
+                "Y": -27.143,
                 "FrameIndex": 10,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": -65.6906,
-                "Y": -65.6906,
-                "FrameIndex": 15,
                 "EasingData": {
                   "Type": 0
                 },
@@ -343,12 +213,12 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": -1107108323,
+            "ActionTag": -304391114,
             "Property": "Position",
             "Frames": [
               {
-                "X": 356.8796,
-                "Y": -60.0526,
+                "X": 297.4476,
+                "Y": -40.435,
                 "FrameIndex": 0,
                 "EasingData": {
                   "Type": 0
@@ -356,8 +226,8 @@
                 "ctype": "PointFrameData"
               },
               {
-                "X": 356.8796,
-                "Y": -60.0526,
+                "X": 297.4476,
+                "Y": -40.435,
                 "FrameIndex": 5,
                 "EasingData": {
                   "Type": 0
@@ -365,18 +235,9 @@
                 "ctype": "PointFrameData"
               },
               {
-                "X": 356.8796,
-                "Y": -60.0526,
+                "X": 297.4476,
+                "Y": -40.435,
                 "FrameIndex": 10,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "PointFrameData"
-              },
-              {
-                "X": 356.8796,
-                "Y": -60.0526,
-                "FrameIndex": 15,
                 "EasingData": {
                   "Type": 0
                 },
@@ -386,7 +247,7 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": -1107108323,
+            "ActionTag": -304391114,
             "Property": "Scale",
             "Frames": [
               {
@@ -415,26 +276,17 @@
                   "Type": 0
                 },
                 "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": 1.0,
-                "Y": 1.0,
-                "FrameIndex": 15,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
               }
             ],
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": -1107108323,
+            "ActionTag": -304391114,
             "Property": "RotationSkew",
             "Frames": [
               {
-                "X": -698.2682,
-                "Y": -698.2682,
+                "X": 1.4362,
+                "Y": 1.4362,
                 "FrameIndex": 0,
                 "EasingData": {
                   "Type": 0
@@ -442,8 +294,8 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": -717.3201,
-                "Y": -717.3201,
+                "X": 38.579,
+                "Y": 38.579,
                 "FrameIndex": 5,
                 "EasingData": {
                   "Type": 0
@@ -451,18 +303,9 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": -698.2682,
-                "Y": -698.2682,
+                "X": 1.9765,
+                "Y": 1.9765,
                 "FrameIndex": 10,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": -717.3201,
-                "Y": -717.3201,
-                "FrameIndex": 15,
                 "EasingData": {
                   "Type": 0
                 },
@@ -472,12 +315,12 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": 572970226,
+            "ActionTag": -14266118,
             "Property": "Position",
             "Frames": [
               {
-                "X": 342.0918,
-                "Y": 36.4134,
+                "X": 297.1225,
+                "Y": 32.3957,
                 "FrameIndex": 0,
                 "EasingData": {
                   "Type": 0
@@ -485,8 +328,8 @@
                 "ctype": "PointFrameData"
               },
               {
-                "X": 342.0918,
-                "Y": 36.4134,
+                "X": 297.1225,
+                "Y": 32.3957,
                 "FrameIndex": 5,
                 "EasingData": {
                   "Type": 0
@@ -494,18 +337,9 @@
                 "ctype": "PointFrameData"
               },
               {
-                "X": 342.0918,
-                "Y": 36.4134,
+                "X": 297.1225,
+                "Y": 32.3957,
                 "FrameIndex": 10,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "PointFrameData"
-              },
-              {
-                "X": 342.0918,
-                "Y": 36.4134,
-                "FrameIndex": 15,
                 "EasingData": {
                   "Type": 0
                 },
@@ -515,7 +349,7 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": 572970226,
+            "ActionTag": -14266118,
             "Property": "Scale",
             "Frames": [
               {
@@ -544,26 +378,17 @@
                   "Type": 0
                 },
                 "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": 1.0,
-                "Y": 1.0,
-                "FrameIndex": 15,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
               }
             ],
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": 572970226,
+            "ActionTag": -14266118,
             "Property": "RotationSkew",
             "Frames": [
               {
-                "X": -76.3888,
-                "Y": -76.3888,
+                "X": -0.269,
+                "Y": -0.269,
                 "FrameIndex": 0,
                 "EasingData": {
                   "Type": 0
@@ -571,8 +396,8 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": -24.6418,
-                "Y": -24.6418,
+                "X": -21.3228,
+                "Y": -21.3228,
                 "FrameIndex": 5,
                 "EasingData": {
                   "Type": 0
@@ -580,18 +405,9 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": -76.3888,
-                "Y": -76.3888,
+                "X": -0.5498,
+                "Y": -0.5498,
                 "FrameIndex": 10,
-                "EasingData": {
-                  "Type": 0
-                },
-                "ctype": "ScaleValueFrameData"
-              },
-              {
-                "X": -24.6418,
-                "Y": -24.6418,
-                "FrameIndex": 15,
                 "EasingData": {
                   "Type": 0
                 },
@@ -601,12 +417,12 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": -1111193388,
+            "ActionTag": 967441221,
             "Property": "Position",
             "Frames": [
               {
-                "X": 241.0109,
-                "Y": 516.9576,
+                "X": -45.2821,
+                "Y": -2.1726,
                 "FrameIndex": 0,
                 "EasingData": {
                   "Type": 0
@@ -614,8 +430,17 @@
                 "ctype": "PointFrameData"
               },
               {
-                "X": 241.0109,
-                "Y": 516.9576,
+                "X": -45.2821,
+                "Y": -2.1726,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "PointFrameData"
+              },
+              {
+                "X": -45.2821,
+                "Y": -2.1726,
                 "FrameIndex": 10,
                 "EasingData": {
                   "Type": 0
@@ -626,7 +451,7 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": -1111193388,
+            "ActionTag": 967441221,
             "Property": "Scale",
             "Frames": [
               {
@@ -641,6 +466,15 @@
               {
                 "X": 1.0,
                 "Y": 1.0,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": 1.0,
+                "Y": 1.0,
                 "FrameIndex": 10,
                 "EasingData": {
                   "Type": 0
@@ -651,12 +485,12 @@
             "ctype": "TimelineData"
           },
           {
-            "ActionTag": -1111193388,
+            "ActionTag": 967441221,
             "Property": "RotationSkew",
             "Frames": [
               {
-                "X": 88.8876,
-                "Y": 88.8876,
+                "X": -193.3741,
+                "Y": -193.3741,
                 "FrameIndex": 0,
                 "EasingData": {
                   "Type": 0
@@ -664,8 +498,17 @@
                 "ctype": "ScaleValueFrameData"
               },
               {
-                "X": 88.8876,
-                "Y": 88.8876,
+                "X": -155.4278,
+                "Y": -155.4278,
+                "FrameIndex": 5,
+                "EasingData": {
+                  "Type": 0
+                },
+                "ctype": "ScaleValueFrameData"
+              },
+              {
+                "X": -177.3886,
+                "Y": -177.3886,
                 "FrameIndex": 10,
                 "EasingData": {
                   "Type": 0
@@ -678,14 +521,7 @@
         ],
         "ctype": "TimelineActionData"
       },
-      "AnimationList": [
-        {
-          "StartIndex": 0,
-          "EndIndex": 15,
-          "Name": "animation0",
-          "ctype": "AnimationInfoData"
-        }
-      ],
+      "AnimationList": [],
       "ObjectData": {
         "Length": 20.0,
         "Position": {
@@ -701,66 +537,70 @@
           "Src": 770,
           "Dst": 771
         },
+        "Tag": 3,
         "Children": [
           {
-            "Length": 338.0,
+            "Length": 268.0,
             "Position": {
-              "X": 241.0109,
-              "Y": 516.9576
+              "X": -3.496,
+              "Y": 214.3448
             },
             "Scale": {
               "ScaleX": 1.0,
               "ScaleY": 1.0
             },
-            "RotationSkewX": 88.8876,
-            "RotationSkewY": 88.8876,
+            "RotationSkewX": 88.89,
+            "RotationSkewY": 88.89,
             "CColor": {},
             "BlendFunc": {
               "Src": 770,
               "Dst": 771
             },
-            "Tag": 64,
+            "Tag": 72,
             "Children": [
               {
-                "Length": 232.0,
+                "Length": 282.0,
                 "Position": {
-                  "X": 199.3397,
-                  "Y": -100.7347
+                  "X": 12.6918,
+                  "Y": -60.932
                 },
                 "Scale": {
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
-                "RotationSkewX": 120.2927,
-                "RotationSkewY": 120.2927,
+                "RotationSkewX": 23.7401,
+                "RotationSkewY": 23.7401,
                 "CColor": {},
                 "BlendFunc": {
                   "Src": 770,
                   "Dst": 771
                 },
-                "Tag": 68,
+                "Tag": 73,
                 "Children": [
                   {
                     "FileData": {
                       "Type": "Normal",
-                      "Path": "test_minion_r_arm.png",
+                      "Path": "Test/leftarm.png",
                       "Plist": ""
                     },
                     "BlendFunc": {
                       "Src": 770,
                       "Dst": 771
                     },
-                    "AnchorPoint": {},
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
                     "Position": {
-                      "X": 145.9517,
-                      "Y": 1.2248
+                      "X": 140.5163,
+                      "Y": 0.9906
                     },
                     "Scale": {
                       "ScaleX": 1.0,
                       "ScaleY": 1.0
                     },
-                    "RotationSkewX": -497.8526,
-                    "RotationSkewY": 222.1467,
+                    "RotationSkewX": -465.3171,
+                    "RotationSkewY": -105.3163,
                     "CColor": {},
                     "IconVisible": false,
                     "PrePosition": {
@@ -771,269 +611,353 @@
                       "X": 0.0,
                       "Y": 0.0
                     },
-                    "LeftMargin": 145.9517,
-                    "RightMargin": -245.9517,
-                    "TopMargin": -103.2248,
-                    "BottomMargin": 1.2248,
-                    "Tag": 76,
-                    "ActionTag": 1906323727,
+                    "LeftMargin": 78.5163,
+                    "RightMargin": -202.5163,
+                    "TopMargin": -159.4906,
+                    "BottomMargin": -157.5094,
+                    "Tag": 66,
+                    "ActionTag": 836177167,
                     "Size": {
-                      "X": 100.0,
-                      "Y": 102.0
+                      "X": 124.0,
+                      "Y": 317.0
                     },
-                    "Name": "L_A",
+                    "Name": "left_arm",
                     "ctype": "SpriteObjectData"
                   }
                 ],
-                "ActionTag": 1201444759,
+                "ActionTag": -1336869108,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "Bone_left_arm",
+                "ctype": "BoneNodeObjectData"
+              },
+              {
+                "Length": 280.0,
+                "Position": {
+                  "X": 20.3405,
+                  "Y": 65.4944
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "RotationSkewX": -27.8806,
+                "RotationSkewY": -27.8806,
+                "CColor": {},
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "Tag": 74,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "Test/rightarm.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 133.0431,
+                      "Y": -0.7247
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "RotationSkewX": -73.4707,
+                    "RotationSkewY": -73.4698,
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 71.0431,
+                    "RightMargin": -195.0431,
+                    "TopMargin": -157.7753,
+                    "BottomMargin": -159.2247,
+                    "Tag": 67,
+                    "ActionTag": -649852026,
+                    "Size": {
+                      "X": 124.0,
+                      "Y": 317.0
+                    },
+                    "Name": "right_arm",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 2049542995,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "Bone_right_arm",
+                "ctype": "BoneNodeObjectData"
+              },
+              {
+                "Length": 303.0,
+                "Position": {
+                  "X": 297.4476,
+                  "Y": -40.435
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "RotationSkewX": 8.8648,
+                "RotationSkewY": 8.8648,
+                "CColor": {},
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "Tag": 75,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "Test/leftleg.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 152.4484,
+                      "Y": 3.8084
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "RotationSkewX": -450.3274,
+                    "RotationSkewY": -90.3274,
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 120.4484,
+                    "RightMargin": -184.4484,
+                    "TopMargin": -182.8084,
+                    "BottomMargin": -175.1916,
+                    "Tag": 68,
+                    "ActionTag": 1634509709,
+                    "Size": {
+                      "X": 64.0,
+                      "Y": 358.0
+                    },
+                    "Name": "left_leg",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": -304391114,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "Bone_left_leg",
+                "ctype": "BoneNodeObjectData"
+              },
+              {
+                "Length": 294.0,
+                "Position": {
+                  "X": 297.1225,
+                  "Y": 32.3957
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "RotationSkewX": -4.4798,
+                "RotationSkewY": -4.4798,
+                "CColor": {},
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "Tag": 76,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "Test/rightleg.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 154.4977,
+                      "Y": -2.1401
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "RotationSkewX": -88.6222,
+                    "RotationSkewY": -88.6207,
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 122.9977,
+                    "RightMargin": -185.9977,
+                    "TopMargin": -176.8599,
+                    "BottomMargin": -181.1401,
+                    "Tag": 69,
+                    "ActionTag": 1757286028,
+                    "Size": {
+                      "X": 63.0,
+                      "Y": 358.0
+                    },
+                    "Name": "rightleg_13",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": -14266118,
+                "Size": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Name": "Bone_right_leg",
+                "ctype": "BoneNodeObjectData"
+              },
+              {
+                "Length": 144.0,
+                "Position": {
+                  "X": -45.2821,
+                  "Y": -2.1726
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "RotationSkewX": -185.7848,
+                "RotationSkewY": -185.7848,
+                "CColor": {},
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "Tag": 77,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "Normal",
+                      "Path": "Test/head.png",
+                      "Plist": ""
+                    },
+                    "BlendFunc": {
+                      "Src": 770,
+                      "Dst": 771
+                    },
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 73.8797,
+                      "Y": 1.3467
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "RotationSkewX": 87.2405,
+                    "RotationSkewY": 87.2413,
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": -27.1203,
+                    "RightMargin": -174.8797,
+                    "TopMargin": -98.3467,
+                    "BottomMargin": -95.6533,
+                    "Tag": 1,
+                    "ActionTag": -542963833,
+                    "Size": {
+                      "X": 202.0,
+                      "Y": 194.0
+                    },
+                    "Name": "head",
+                    "ctype": "SpriteObjectData"
+                  }
+                ],
+                "ActionTag": 967441221,
                 "ZOrder": 29,
                 "Size": {
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "Name": "Bone_29",
-                "ctype": "BoneNodeObjectData"
-              },
-              {
-                "Length": 258.0,
-                "Position": {
-                  "X": 203.6051,
-                  "Y": 74.6754
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "RotationSkewX": -77.3712,
-                "RotationSkewY": -77.3712,
-                "CColor": {},
-                "BlendFunc": {
-                  "Src": 770,
-                  "Dst": 771
-                },
-                "Tag": 69,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "test_minion_l_leg.png",
-                      "Plist": ""
-                    },
-                    "BlendFunc": {
-                      "Src": 770,
-                      "Dst": 771
-                    },
-                    "AnchorPoint": {},
-                    "Position": {
-                      "X": 49.8214,
-                      "Y": -69.71
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "RotationSkewX": -23.3735,
-                    "RotationSkewY": -23.3735,
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.0,
-                      "Y": 0.0
-                    },
-                    "PreSize": {
-                      "X": 0.0,
-                      "Y": 0.0
-                    },
-                    "LeftMargin": 49.8214,
-                    "RightMargin": -184.8214,
-                    "TopMargin": -25.29,
-                    "BottomMargin": -69.71,
-                    "Tag": 74,
-                    "ActionTag": -2143837744,
-                    "Size": {
-                      "X": 135.0,
-                      "Y": 95.0
-                    },
-                    "Name": "R_A",
-                    "ctype": "SpriteObjectData"
-                  }
-                ],
-                "ActionTag": 517699101,
-                "ZOrder": 30,
-                "Size": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "Name": "Bone_30",
-                "ctype": "BoneNodeObjectData"
-              },
-              {
-                "Length": 279.0,
-                "Position": {
-                  "X": 356.8796,
-                  "Y": -60.0526
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "RotationSkewX": -713.5098,
-                "RotationSkewY": -713.5098,
-                "CColor": {},
-                "BlendFunc": {
-                  "Src": 770,
-                  "Dst": 771
-                },
-                "Tag": 70,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "test_minion_r_leg.png",
-                      "Plist": ""
-                    },
-                    "BlendFunc": {
-                      "Src": 770,
-                      "Dst": 771
-                    },
-                    "AnchorPoint": {},
-                    "Position": {
-                      "X": 162.5329,
-                      "Y": -30.3209
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "RotationSkewX": -90.4178,
-                    "RotationSkewY": -90.4163,
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.0,
-                      "Y": 0.0
-                    },
-                    "PreSize": {
-                      "X": 0.0,
-                      "Y": 0.0
-                    },
-                    "LeftMargin": 162.5329,
-                    "RightMargin": -207.5329,
-                    "TopMargin": -140.6791,
-                    "BottomMargin": -30.3209,
-                    "Tag": 77,
-                    "ActionTag": 1502770999,
-                    "Size": {
-                      "X": 45.0,
-                      "Y": 171.0
-                    },
-                    "Name": "L_L",
-                    "ctype": "SpriteObjectData"
-                  }
-                ],
-                "ActionTag": -1107108323,
-                "ZOrder": 31,
-                "Size": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "Name": "Bone_31",
-                "ctype": "BoneNodeObjectData"
-              },
-              {
-                "Length": 244.0,
-                "Position": {
-                  "X": 342.0918,
-                  "Y": 36.4134
-                },
-                "Scale": {
-                  "ScaleX": 1.0,
-                  "ScaleY": 1.0
-                },
-                "RotationSkewX": -34.9912,
-                "RotationSkewY": -34.9912,
-                "CColor": {},
-                "BlendFunc": {
-                  "Src": 770,
-                  "Dst": 771
-                },
-                "Tag": 71,
-                "Children": [
-                  {
-                    "FileData": {
-                      "Type": "Normal",
-                      "Path": "test_minion_l_arm.png",
-                      "Plist": ""
-                    },
-                    "BlendFunc": {
-                      "Src": 770,
-                      "Dst": 771
-                    },
-                    "AnchorPoint": {},
-                    "Position": {
-                      "X": 176.379,
-                      "Y": -37.7565
-                    },
-                    "Scale": {
-                      "ScaleX": 1.0,
-                      "ScaleY": 1.0
-                    },
-                    "RotationSkewX": -442.4985,
-                    "RotationSkewY": -82.4981,
-                    "CColor": {},
-                    "IconVisible": false,
-                    "PrePosition": {
-                      "X": 0.0,
-                      "Y": 0.0
-                    },
-                    "PreSize": {
-                      "X": 0.0,
-                      "Y": 0.0
-                    },
-                    "LeftMargin": 176.379,
-                    "RightMargin": -240.379,
-                    "TopMargin": -131.2435,
-                    "BottomMargin": -37.7565,
-                    "Tag": 72,
-                    "ActionTag": -1457679917,
-                    "Size": {
-                      "X": 64.0,
-                      "Y": 169.0
-                    },
-                    "Name": "R_L",
-                    "ctype": "SpriteObjectData"
-                  }
-                ],
-                "ActionTag": 572970226,
-                "ZOrder": 32,
-                "Size": {
-                  "X": 0.0,
-                  "Y": 0.0
-                },
-                "Name": "Bone_32",
+                "Name": "Bone_head",
                 "ctype": "BoneNodeObjectData"
               },
               {
                 "FileData": {
                   "Type": "Normal",
-                  "Path": "test_minion_body.png",
+                  "Path": "Test/body.png",
                   "Plist": ""
                 },
                 "BlendFunc": {
                   "Src": 770,
                   "Dst": 771
                 },
-                "AnchorPoint": {},
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
                 "Position": {
-                  "X": 382.0284,
-                  "Y": -134.8485
+                  "X": 124.349,
+                  "Y": -2.5114
                 },
                 "Scale": {
                   "ScaleX": 1.0,
                   "ScaleY": 1.0
                 },
-                "RotationSkewX": -88.8885,
-                "RotationSkewY": -88.8885,
+                "RotationSkewX": -88.8917,
+                "RotationSkewY": -88.8898,
                 "CColor": {},
                 "IconVisible": false,
                 "PrePosition": {
@@ -1044,27 +968,27 @@
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": 382.0284,
-                "RightMargin": -646.0284,
-                "TopMargin": -195.1515,
-                "BottomMargin": -134.8485,
-                "Tag": 75,
-                "ActionTag": -756966925,
+                "LeftMargin": 26.849,
+                "RightMargin": -221.849,
+                "TopMargin": -179.4886,
+                "BottomMargin": -184.5114,
+                "Tag": 1,
+                "ActionTag": 713449507,
                 "Size": {
-                  "X": 264.0,
-                  "Y": 330.0
+                  "X": 195.0,
+                  "Y": 364.0
                 },
-                "Name": "Body",
+                "Name": "body",
                 "ctype": "SpriteObjectData"
               }
             ],
-            "ActionTag": -1111193388,
-            "ZOrder": 100,
+            "ActionTag": 1375592463,
+            "ZOrder": 24,
             "Size": {
               "X": 0.0,
               "Y": 0.0
             },
-            "Name": "Bone_25",
+            "Name": "Bone_body",
             "ctype": "BoneNodeObjectData"
           }
         ],
@@ -1072,15 +996,16 @@
           "X": 0.0,
           "Y": 0.0
         },
-        "Name": "Hero",
+        "Name": "Skeleton",
         "ctype": "SkeletonNodeObjectData"
       },
       "UsedResources": [
-        "test_minion_body.png",
-        "test_minion_l_arm.png",
-        "test_minion_l_leg.png",
-        "test_minion_r_arm.png",
-        "test_minion_r_leg.png"
+        "Test/body.png",
+        "Test/head.png",
+        "Test/leftarm.png",
+        "Test/leftleg.png",
+        "Test/rightarm.png",
+        "Test/rightleg.png"
       ],
       "ctype": "GameFileData"
     }

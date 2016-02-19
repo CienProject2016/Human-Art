@@ -35,8 +35,9 @@ var Field = cc.Layer.extend({
 
             this.minions[i].runAction(minSeq).repeatForever();
 
+            this.minions[i].addListener(minionListener());
+            this.minions[i].setPosition(500, 200);
             this.addChild(this.minions[i]);
-            cc.eventManager.addListener(cc.EventListener.create(minionListener()), this.minions[i]);
         }
     },
     update: function (delta) {
