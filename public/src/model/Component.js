@@ -1,6 +1,6 @@
 var Component = cc.Node.extend({
     ref: null,
-    stateOfMinion: 3,
+    stateOfMinion: 2,
     ctor: function (type) {
         this._super();
         this.ref = this;
@@ -50,7 +50,12 @@ var Component = cc.Node.extend({
         cc.eventManager.addListener(minionListener(this), this.getRightLegSprite());
         cc.eventManager.addListener(minionListener(this), this.getHeadSprite());
     },
+    temporalActions: null,
     paralyze: function() {
-        // this.action.gotoFrameAndPlay(0, false);
+        this.temporalActions = this.getActionManager().pauseAllRunningActions();
+    },
+    heal: function() {
+        this.resume();
+        this.getActionManager().resumeTargets(this.temporalActions);
     }
 });

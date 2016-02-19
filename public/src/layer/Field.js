@@ -18,23 +18,8 @@ var Field = cc.Layer.extend({
             }, this);
         }
 
-        var size = cc.director.getWinSize();
         for (var i = 0; i < this.minions.length; i++) {
-            var x = Math.floor((Math.random() * size.width));
-            var y = Math.floor((Math.random() * size.height / 10) + size.height / 50);
-
-            var ms = Math.floor((Math.random() + 1));
-            var mas = (size.width - x) / size.width * ms
-            var m2s = x / size.width * ms;
-
-            var move = cc.MoveBy.create(5, cc.p(size.width - x, y));
-            var moveaway = cc.MoveBy.create(5, cc.p(-size.width, -y));
-            var move2 = cc.MoveBy.create(5, cc.p(x, y));
-
-            var minSeq = cc.Sequence.create(move, moveaway, move2);
-
-            this.minions[i].runAction(minSeq).repeatForever();
-
+            this.minions[i].runAction(this.makeRandomMove()).repeatForever();
             this.minions[i].addListener(minionListener());
             this.minions[i].setPosition(500, 200);
             this.addChild(this.minions[i]);
@@ -56,6 +41,21 @@ var Field = cc.Layer.extend({
                 minion.runAction(cc.MoveBy.create(0, cc.p(30, 0)));
             }
         })
+    },
+    makeRandomMove: function() {
+        var size = cc.director.getWinSize();
+        var x = Math.floor((Math.random() * size.width));
+        var y = Math.floor((Math.random() * size.height / 10) + size.height / 50);
+
+        var ms = Math.floor((Math.random() + 1));
+        var mas = (size.width - x) / size.width * ms
+        var m2s = x / size.width * ms;
+
+        var move = cc.MoveBy.create(5, cc.p(size.width - x, y));
+        var moveaway = cc.MoveBy.create(5, cc.p(-size.width, -y));
+        var move2 = cc.MoveBy.create(5, cc.p(x, y));
+
+        return cc.Sequence.create(move, moveaway, move2);
     },
     getMinion: function (i) {
         return this.minions[i];

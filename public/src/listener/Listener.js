@@ -12,8 +12,13 @@ function minionListener(caller) {
             var rect = cc.rect(0, 0, s.width, s.height);
 
             if (cc.rectContainsPoint(rect, locationInNode)) {
-                ref.setOpacity(50);
-                console.log(ref.getOpacity());
+                if (ref.stateOfMinion == 3) {
+                    ref.pause();
+                }
+                else if (ref.stateOfMinion == 2){
+                    ref.paralyze();
+                }
+                ref.setOpacity(180);
                 return true;
             }
             return false;
@@ -24,8 +29,8 @@ function minionListener(caller) {
             ref.y += delta.y;
         },
         onTouchEnded: function (touch, event) {
-            var target = event.getCurrentTarget();
-            target.setOpacity(255);
+            ref.setOpacity(255);
+            ref.heal();
         }
     };
 }
