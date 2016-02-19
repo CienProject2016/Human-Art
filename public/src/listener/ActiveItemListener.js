@@ -1,4 +1,5 @@
 function generatorListener(activeItem){
+    
     return {
       event: cc.EventListener.TOUCH_ONE_BY_ONE,
         swallowTouches: true,
@@ -9,6 +10,13 @@ function generatorListener(activeItem){
             var rect = cc.rect(0, 0, s.width, s.height);
             if (cc.rectContainsPoint(rect, locationInNode)) {
                 activeItem.setTexture("res/activeItem/" + activeItem.name + "_active.png");
+
+     var audioElement = new Audio( "res/music/" + "charge.wav"); 
+     audioElement.play();
+
+                
+                
+          
                 return true;
             }
             return false;
