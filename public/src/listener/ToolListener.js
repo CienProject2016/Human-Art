@@ -37,7 +37,8 @@ function absorberListener() {
 
                 this.setPosition(event._x, event._y);
                 this.visible = true;
-
+                
+               
 
             }
         },
@@ -60,6 +61,9 @@ function absorberListener() {
         }
 
     }, this);
+    
+    
+    
 }
 
 function bombListener() {
@@ -93,4 +97,39 @@ function bombListener() {
         }
 
     }, this);
-}
+};
+
+function MinionTouched(minion) {
+    var name = User.usingTool.name;
+    switch (name) {
+            case "absorber":
+                minion.setScale(1.2);
+                     
+                break;
+             case "bomb":    
+             
+             
+                break;
+
+        }   
+};
+
+function MinionTouchEnded(minion) {
+    var name = User.usingTool.name;
+    switch (name) {
+            case "absorber":
+           
+            var scalingMinion= cc.ScaleTo.create(0.5,0.7,0.7);
+
+             minion.runAction(scalingMinion);
+               
+                break;
+                 case "bomb":    
+             
+             
+                break;
+                
+                
+
+        }
+};

@@ -1,4 +1,6 @@
 function minionListener() {
+
+
     return {
         event: cc.EventListener.TOUCH_ONE_BY_ONE,
         swallowTouches: true,
@@ -12,6 +14,8 @@ function minionListener() {
             if (cc.rectContainsPoint(rect, locationInNode)) {
                 cc.log("sprite began... x = " + locationInNode.x + ", y = " + locationInNode.y);
                 target.opacity = 180;
+               
+                MinionTouched(target);
                 return true;
             }
             return false;
@@ -21,13 +25,18 @@ function minionListener() {
             var delta = touch.getDelta();
             target.x += delta.x;
             target.y += delta.y;
+           
+           
         },
         onTouchEnded: function (touch, event) {
             var target = event.getCurrentTarget();
             cc.log("sprite onTouchesEnded.. ");
             target.setOpacity(255);
-        }
+             MinionTouchEnded(target);
+        },
+
     };
+
 }
 
 function onChangeToolListener(board, toolName) {
@@ -50,10 +59,12 @@ function onChangeToolListener(board, toolName) {
             return false;
         },
         onTouchMoved: function (touch, event) {
+            
 
         },
         onTouchEnded: function (touch, event) {
 
         }
     };
-}
+};
+

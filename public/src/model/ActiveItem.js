@@ -10,9 +10,7 @@ var ActiveItem = cc.Sprite.extend({
             case "generator":
                 cc.eventManager.addListener(cc.EventListener.create(generatorListener(this)), this);
                 break;
-            case "generator2":
-                cc.eventManager.addListener(cc.EventListener.create(generatorListener(this)), this);
-                break;
+
         }
     }
 });
