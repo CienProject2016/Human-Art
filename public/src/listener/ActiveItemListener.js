@@ -1,7 +1,7 @@
-function generatorListener(activeItem){
-    
+function generatorListener(activeItem) {
+
     return {
-      event: cc.EventListener.TOUCH_ONE_BY_ONE,
+        event: cc.EventListener.TOUCH_ONE_BY_ONE,
         swallowTouches: true,
         onTouchBegan: function (touch, event) {
             var target = event.getCurrentTarget();
@@ -11,12 +11,9 @@ function generatorListener(activeItem){
             if (cc.rectContainsPoint(rect, locationInNode)) {
                 activeItem.setTexture("res/activeItem/" + activeItem.name + "_active.png");
 
-     var audioElement = new Audio( "res/music/" + "charge.wav"); 
-     audioElement.play();
+                var audioElement = new Audio("res/music/" + "charge.wav");
+                audioElement.play();
 
-                
-                
-          
                 return true;
             }
             return false;
@@ -26,7 +23,7 @@ function generatorListener(activeItem){
         onTouchEnded: function (touch, event) {
             activeItem.setTexture("res/activeItem/" + activeItem.name + ".png");
             ActiveItemController.setElectricPower(5);
-        }  
+        }
     };
 }
 

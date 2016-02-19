@@ -21,7 +21,6 @@ var Board = cc.Layer.extend({
         // Color Background
         var bgSprite = cc.Sprite.create("res/images/colorbg.jpg");
         bgSprite.setPosition(size.width / 2,  -size.height*1.2);
-     
 
         var movebg = cc.MoveBy.create(10, cc.p(0, size.height*3.5));
         var movebg1 = cc.MoveBy.create(0, cc.p(0, -size.height*3.5));

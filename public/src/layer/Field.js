@@ -28,8 +28,8 @@ var Field = cc.Layer.extend({
     update: function (delta) {
         this.minions.forEach(function (minion) {
             var p = minion.getPosition();
-            if (p.y > 350) {
-                minion.runAction(cc.MoveBy.create(0, cc.p(0, -100)));
+            if (p.y > 200) {
+                minion.runAction(cc.MoveBy.create(1, cc.p(0, 0)));
             }
             if (p.y < 0) {
                 minion.runAction(cc.MoveBy.create(0, cc.p(0, 50)));
