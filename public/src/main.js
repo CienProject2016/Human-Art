@@ -1,5 +1,5 @@
 var g_mainmenu = [
-    "res/minions/Test.json", "res/minions/hourse.json", "res/minions/skeleton1.json", "res/ui/menu.json", "res/ui/item.json","res/music/charge.wav"
+    "res/minions/skeleton2.json", "res/minions/horse.json", "res/minions/skeleton1.json", "res/ui/item.json", "res/music/charge.wav"
 ]
 
 window.onload = function () {

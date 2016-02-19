@@ -1,6 +1,8 @@
 {
     "minionNum": 10,
 	"minions": [
-		"Test"
+		"horse",
+        "skeleton1",
+        "skeleton2"
 	]
 }

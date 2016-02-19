@@ -16,7 +16,9 @@ var Component = cc.Node.extend({
             res.node.runAction(res.action);
             res.action.gotoFrameAndPlay(0, true);
         }
-
+        
+        this.width = 500;
+        this.height = 500;
         this.addChild(res.node);
         
         return true;
