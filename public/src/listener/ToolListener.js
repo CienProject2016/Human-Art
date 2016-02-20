@@ -3,13 +3,13 @@ function handListener(ref) {
         event: cc.EventListener.MOUSE,
         onMouseDown: function (event) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
-                ref.setPosition(event._x, event._y);
+                ref.setPosition(event._x + 36, event._y - 60);
                 ref.visible = true;
             }
         },
         onMouseMove: function (event) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
-                ref.setPosition(event._x, event._y);
+                ref.setPosition(event._x + 36, event._y - 60);
                 ref.visible = true;
 
             }
@@ -29,14 +29,14 @@ function handListener(ref) {
     });
 }
 
-function absorberListener() {
+function absorberListener(ref) {
     return cc.EventListener.create({
         event: cc.EventListener.MOUSE,
         onMouseDown: function (event) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
 
-                this.setPosition(event._x, event._y);
-                this.visible = true;
+                ref.setPosition(event._x, event._y);
+                ref.visible = true;
                 
                
 
@@ -44,14 +44,14 @@ function absorberListener() {
         },
         onMouseMove: function (event) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
-                this.setPosition(event._x, event._y);
-                this.visible = true;
+                ref.setPosition(event._x, event._y);
+                ref.visible = true;
 
             }
         },
         onMouseUp: function (event) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
-                this.visible = false;
+                ref.visible = false;
 
             }
         },
@@ -66,28 +66,26 @@ function absorberListener() {
     
 }
 
-function bombListener() {
+function bombListener(ref) {
     return cc.EventListener.create({
         event: cc.EventListener.MOUSE,
         onMouseDown: function (event) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
 
-                this.setPosition(event._x, event._y);
-                this.visible = true;
-
-
+                ref.setPosition(event._x, event._y);
+                ref.visible = true;
             }
         },
         onMouseMove: function (event) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
-                this.setPosition(event._x, event._y);
-                this.visible = true;
+                ref.setPosition(event._x, event._y);
+                ref.visible = true;
 
             }
         },
         onMouseUp: function (event) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
-                this.visible = false;
+                ref.visible = false;
 
             }
         },

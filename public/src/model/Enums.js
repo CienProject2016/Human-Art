@@ -4,5 +4,7 @@ var ZORDER = {
     "FIELD": 1,
     "UI": 2,
     "INVENTORY": 2,
-    "CURSOR": 3
+    "TOOL_LIST" : 3,
+    "CURSOR": 4,
+    "USING_TOOL" :5
 }

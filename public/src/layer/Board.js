@@ -6,8 +6,7 @@ var Board = cc.Layer.extend({
     userList: [],
     usingToolImage: null,
     field: null,
-
-
+    usingTool : {},
     ctor: function (boardId) {
         this._super();
         this.init(boardId);
@@ -17,6 +16,7 @@ var Board = cc.Layer.extend({
         this._super();
         this.id = boardId;
         var size = cc.director.getWinSize();
+        
         
         // Color Background
         var bgSprite = cc.Sprite.create("res/images/colorbg.jpg");
@@ -33,11 +33,7 @@ var Board = cc.Layer.extend({
         this.electricPowerLabel = cc.LabelTTF.create(User.electricPower.getCurrentElectricPower(), "Arial", 80);
         this.electricPowerLabel.setPosition(size.width / 10, size.height * 14 / 15);
         this.addChild(this.electricPowerLabel, ZORDER.UI);
-
-        // TOOL
-        this.makeUsingTool();
-        this.makeToolInventory();
-        this.addChild(User.usingTool, ZORDER.UI, "usingTool");
+        
         
         // Field
         this.field = new Field("field");
@@ -47,6 +43,22 @@ var Board = cc.Layer.extend({
         this.usingTool = User.usingTool;
         this.makeUsingTool();
         this.makeToolInventory();
+        this.addChild(User.usingTool, ZORDER.USING_TOOL, "usingTool");
+
+        // ToolList
+        var toolList = new ToolList();
+        toolList.setPosition(size.width * 1/2, size.height * 2/5);
+        toolList.setVisible(false);
+        this.addChild(toolList, ZORDER.TOOL_LIST);
+
+        //UI
+        var toolListButton = ccui.Button.create("res/ui/menu/menuInActive.png", "res/ui/menu/menuActive.png", "res/ui/menu/menuInActive.png");
+        toolListButton.addTouchEventListener(function(){
+            toolList.setVisible(true);
+        }); 
+        toolListButton.setScale(2.0);
+        toolListButton.setPosition(size.width *9/10, size.height * 1/2);
+        this.addChild(toolListButton, ZORDER.UI);
 
         // ActiveItem (Temporary)
         var activeItem = new ActiveItem("generator");
@@ -61,10 +73,17 @@ var Board = cc.Layer.extend({
     update: function (delta) {
         this.usingToolImage.setTexture("res/tools/" + User.usingTool.name + ".png");
         this.electricPowerLabel.setString(User.electricPower.getCurrentElectricPower());
-
+        this.checkToolIsChanged();
         this.field.update(delta);
     },
 
+    checkToolIsChanged : function(){
+        var usingTool = this.getChildByName("usingTool");
+        if(usingTool.name != User.usingTool.name){
+            this.removeChild(usingTool);
+            this.addChild(User.usingTool, ZORDER.USING_TOOL, "usingTool");
+        }
+    },
     makeToolInventory: function () {
         var size = cc.director.getWinSize();
         var toolListFrame = cc.Sprite.create("res/tools/toolListFrame.png");

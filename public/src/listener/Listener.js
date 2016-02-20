@@ -51,8 +51,6 @@ function onChangeToolListener(board, toolName) {
 
             if (cc.rectContainsPoint(rect, locationInNode)) {
                 User.usingTool = new Tool(toolName);
-                var usingTool = board.getChildByName("usingTool");
-                usingTool.setTexture("res/tools/" + User.usingTool.name + ".png")
 
                 return true;
             }
