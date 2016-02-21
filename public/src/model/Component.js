@@ -54,7 +54,7 @@ var Component = cc.Node.extend({
     },
     temporalActions: null,
     paralyze: function() {
-        this.temporalActions = this.getActionManager().pauseAllRunningActions();
+        this.temporalActions = this.getActionManager().pauseTarget(this.ref);
     },
     heal: function() {
         this.resume();
