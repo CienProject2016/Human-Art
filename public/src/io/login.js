@@ -2,8 +2,25 @@ var profile;
 
 function onSignIn(googleUser) {
     profile = googleUser.getBasicProfile();
-    console.log(profile.getId() + " 님이 로그인하셨습니다.");
-    document.getElementById("userName").innerText = profile.getName() + " 님 접속하신 것을 환영합니다.";
+
+    var req = new XMLHttpRequest();
+    req.open("POST", "/login", true);
+    req.setRequestHeader("Content-Type", "application/json");
+    req.onreadystatechange = function (aEvt) {
+        if (req.readyState == 4 && req.status == 200) {
+            var userData = JSON.parse(req.response);
+            if (userData.first) {
+                document.getElementById("userName").innerText =
+                profile.getName() + " 님 처음 접속하신 것을 환영합니다.";
+            }
+            else {
+                document.getElementById("userName").innerText =
+                profile.getName() + " 님 재접속하신 것을 환영합니다.";
+            }
+        }
+    };
+    req.send(JSON.stringify({ id: profile.getId() }));
+
     var dialog = document.getElementById("signInDialog");
     if (dialog.open)
         dialog.close();
