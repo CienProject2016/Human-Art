@@ -13,9 +13,6 @@ var Field = cc.Layer.extend({
         }
         else {
             this.minionNum = data.minionNum;
-            data.minions.forEach(function (name) {
-                this.minions.push(new Component(name));
-            }, this);
         }
 
         var fieldBG = cc.Sprite.create("res/images/field_background.jpg");
@@ -23,35 +20,51 @@ var Field = cc.Layer.extend({
         fieldBG.setPosition(0, 0);
         this.addChild(fieldBG);
 
-        for (var i = 0; i < this.minions.length; i++) {
-            var size = cc.director.getWinSize();
-            var x = Math.floor((Math.random() * size.width));
+        var size = cc.director.getWinSize();
+        var minionHeight = 150;
+
+        for (var i = 0; i < this.minionNum; i++) {
+            var type = Math.floor(Math.random() * data.minionNameList.length);
+            var newMinion = new Component(data.minionNameList[type]);
+            var x = Math.floor(Math.random() * size.width);
             var y = Math.floor((Math.random() * size.height / 10) + size.height / 50);
-            this.minions[i].setPosition(x, y);
-            this.minions[i].setAnchorPoint(0, 0);
-            var minWidth = this.minions[i].getContentSize().width;
-            var minHeight = this.minions[i].getContentSize().height;
-            this.minions[i].children[0].setScale((150 / minWidth) / minHeight * minWidth, 150 / minHeight);
-            this.minions[i].runAction(this.makeRandomMove(x, y)).repeatForever();
-            this.minions[i].addListener(minionListener());
-            this.addChild(this.minions[i]);
+
+            newMinion.setPosition(x, y);
+            newMinion.setAnchorPoint(0, 0);
+            var minionRealWidth = newMinion.getContentSize().width;
+            var minionRealHeight = newMinion.getContentSize().height;
+            newMinion.children[0].setScale((minionHeight / minionRealWidth) / minionRealHeight * minionRealWidth, minionHeight / minionRealHeight);
+            newMinion.runAction(this.makeRandomMove(x, y)).repeatForever();
+            newMinion.addListener(minionListener());
+
+            this.minions.push(newMinion);
+            this.addChild(newMinion);
         }
     },
-    
+    tempAction: null,
     update: function (delta) {
         this.minions.forEach(function (minion) {
             var p = minion.getPosition();
-            if (p.y > 200) {
-                minion.runAction(cc.MoveBy.create(0, cc.p(0, -50)));
+            if (!this.tempAction && !minion.hold) {
+                if (p.y > 200) {
+                    this.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(0, 100 - p.y)));
+                }
+                else if (p.y < 0) {
+                    this.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(0, 100 - p.y)));
+                }
+                if (p.x > cc.director.getWinSize().width) {
+                    this.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(cc.director.getWinSize().width - p.x, 0)));
+                }
+                else if (p.x < 0) {
+                    this.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(-p.x, 0)));
+                }
             }
-            if (p.y < 0) {
-                minion.runAction(cc.MoveBy.create(0, cc.p(0, 50)));
-            }
-            if (p.x > cc.director.getWinSize().width) {
-                minion.runAction(cc.MoveBy.create(0, cc.p(-30, 0)));
-            }
-            if (p.x < 0) {
-                minion.runAction(cc.MoveBy.create(0, cc.p(30, 0)));
+            else {
+                if (this.tempAction) {
+                    if (this.tempAction.isDone()) {
+                        this.tempAction = null;
+                    }
+                }
             }
         })
     },

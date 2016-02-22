@@ -1,6 +1,6 @@
 {
-    "minionNum": 10,
-	"minions": [
+    "minionNum": 1,
+	"minionNameList": [
 		"horse",
         "skeleton1",
         "skeleton2"

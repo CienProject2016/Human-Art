@@ -17,8 +17,6 @@ function handListener(ref) {
         onMouseUp: function (event) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
                 ref.visible = false;
-
-
             }
         },
         onMouseScroll: function (event) {
@@ -34,25 +32,19 @@ function absorberListener(ref) {
         event: cc.EventListener.MOUSE,
         onMouseDown: function (event) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
-
                 ref.setPosition(event._x, event._y);
                 ref.visible = true;
-                
-               
-
             }
         },
         onMouseMove: function (event) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
                 ref.setPosition(event._x, event._y);
                 ref.visible = true;
-
             }
         },
         onMouseUp: function (event) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
                 ref.visible = false;
-
             }
         },
         onMouseScroll: function (event) {
@@ -61,9 +53,6 @@ function absorberListener(ref) {
         }
 
     }, this);
-    
-    
-    
 }
 
 function bombListener(ref) {
@@ -71,7 +60,6 @@ function bombListener(ref) {
         event: cc.EventListener.MOUSE,
         onMouseDown: function (event) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
-
                 ref.setPosition(event._x, event._y);
                 ref.visible = true;
             }
@@ -80,54 +68,16 @@ function bombListener(ref) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
                 ref.setPosition(event._x, event._y);
                 ref.visible = true;
-
             }
         },
         onMouseUp: function (event) {
             if (event.getButton() == cc.EventMouse.BUTTON_LEFT) {
                 ref.visible = false;
-
             }
         },
         onMouseScroll: function (event) {
             var str = "Mouse Scroll detected, X: " + event.getLocationX() + "  Y:" + event.getLocationY();
             console.log(str);
         }
-
     }, this);
-};
-
-function MinionTouched(minion) {
-    var name = User.usingTool.name;
-    switch (name) {
-            case "absorber":
-                minion.setScale(1.2);
-                     
-                break;
-             case "bomb":    
-             
-             
-                break;
-
-        }   
-};
-
-function MinionTouchEnded(minion) {
-    var name = User.usingTool.name;
-    switch (name) {
-            case "absorber":
-           
-            var scalingMinion= cc.ScaleTo.create(0.5,0.7,0.7);
-
-             minion.runAction(scalingMinion);
-               
-                break;
-                 case "bomb":    
-             
-             
-                break;
-                
-                
-
-        }
 };

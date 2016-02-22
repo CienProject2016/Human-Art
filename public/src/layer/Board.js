@@ -74,6 +74,7 @@ var Board = cc.Layer.extend({
         this.usingToolImage.setTexture("res/tools/" + User.usingTool.name + ".png");
         this.electricPowerLabel.setString(User.electricPower.getCurrentElectricPower());
         this.checkToolIsChanged();
+        
         this.field.update(delta);
     },
 
