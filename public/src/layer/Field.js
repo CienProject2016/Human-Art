@@ -20,14 +20,14 @@ var Field = cc.Layer.extend({
         fieldBG.setPosition(0, 0);
         this.addChild(fieldBG);
 
-        var size = cc.director.getWinSize();
+        var winSize = cc.director.getWinSize();
         var minionHeight = 150;
 
         for (var i = 0; i < this.minionNum; i++) {
             var type = Math.floor(Math.random() * data.minionNameList.length);
             var newMinion = new Component(data.minionNameList[type]);
-            var x = Math.floor(Math.random() * size.width);
-            var y = Math.floor((Math.random() * size.height / 10) + size.height / 50);
+            var x = Math.floor(Math.random() * winSize.width);
+            var y = Math.floor((Math.random() * winSize.height / 10) + winSize.height / 50);
 
             newMinion.setPosition(x, y);
             newMinion.setAnchorPoint(0, 0);
@@ -41,28 +41,27 @@ var Field = cc.Layer.extend({
             this.addChild(newMinion);
         }
     },
-    tempAction: null,
     update: function (delta) {
         this.minions.forEach(function (minion) {
             var p = minion.getPosition();
-            if (!this.tempAction && !minion.hold) {
+            if (!minion.tempAction && !minion.isGrasped) {
                 if (p.y > 200) {
-                    this.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(0, 100 - p.y)));
+                    minion.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(0, 100 - p.y)));
                 }
                 else if (p.y < 0) {
-                    this.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(0, 100 - p.y)));
+                    minion.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(0, 100 - p.y)));
                 }
                 if (p.x > cc.director.getWinSize().width) {
-                    this.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(cc.director.getWinSize().width - p.x, 0)));
+                    minion.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(cc.director.getWinSize().width - p.x, 0)));
                 }
                 else if (p.x < 0) {
-                    this.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(-p.x, 0)));
+                    minion.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(-p.x, 0)));
                 }
             }
             else {
-                if (this.tempAction) {
-                    if (this.tempAction.isDone()) {
-                        this.tempAction = null;
+                if (minion.tempAction) {
+                    if (minion.tempAction.isDone()) {
+                        minion.tempAction = null;
                     }
                 }
             }

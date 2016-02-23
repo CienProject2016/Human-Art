@@ -11,7 +11,7 @@
         "src/listener/ActiveItemListener.js",
         "src/listener/ToolListener.js",
         "src/controller/ActiveItemController.js",
-        "src/layer/ToolList.js",
+        "src/layer/Inventory.js",
 		"src/model/Component.js",	  
         "src/model/ElectricPower.js",
         "src/model/Score.js",
@@ -20,6 +20,7 @@
         "src/model/ActiveItem.js",   	
         "src/layer/Field.js",
         "src/layer/Board.js",
+        "src/layer/UI.js",
         "src/main.js"
     ]
 }
