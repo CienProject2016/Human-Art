@@ -1,6 +1,7 @@
 var Component = cc.Node.extend({
     ref: null,
     stateOfMinion: 2,
+    minionHold:false,
     ctor: function (type) {
         this._super();
         this.ref = this;
