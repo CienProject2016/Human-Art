@@ -66,6 +66,14 @@ var Board = cc.Layer.extend({
         activeItem.setListener();
         activeItem.setPosition(size.width / 10, size.height * 1 / 4);
         this.addChild(activeItem, ZORDER.ACTIVEITEM, "activeItem");
+        
+        var ufo = new ActiveItem("ufo");
+        ufo.setVisible(false);
+        ufo.setPosition(size.width * 0.2, size.height * 0.3);
+        this.addChild(ufo, ZORDER.ACTIVEITEM, "activeItem");
+        ActiveItemController.showUfo(this, ufo);
+        
+        ufo.setListener(this, ufo);
 
         this.scheduleUpdate();
     },
