@@ -13,11 +13,8 @@ var ActiveItemController = (function(){
     };
     
     this.showUfo = function(board, ufo){
-        board.schedule(function(){
-           ufo.setVisible(true); 
-        });
         
-        board.schedule(function(){
+        ufo.schedule(function(){
              var ufoSound1 = new Audio("res/music/ufo_01.mp3");
              ufoSound1.play();
         },4);
@@ -27,14 +24,12 @@ var ActiveItemController = (function(){
          ufoHealthLabel.setColor(cc.color.GREEN);
          ufo.addChild(ufoHealthLabel, ZORDER.HEALTH_LABEL, "ufoHealthLabel");
         
-        board.schedule(function(){
+        ufo.schedule(function(){
             var ufoSound2 = new Audio("res/music/ufo_02.mp3");
             ufoSound2.play();
         },5);
         
-       
-        
-        board.schedule(function(){
+        ufo.schedule(function(){
              var posX = ufo.x;
              var posY = ufo.y;
              var randomX = Math.floor(Math.random() * 900) + 100;

@@ -6,7 +6,7 @@ var Board = cc.Layer.extend({
     userList: [],
     usingToolImage: null,
     field: null,
-    usingTool : {},
+    usingTool: {},
     ctor: function (boardId) {
         this._super();
         this.init(boardId);
@@ -20,14 +20,14 @@ var Board = cc.Layer.extend({
         
         // Color Background
         var bgSprite = cc.Sprite.create("res/images/colorbg.jpg");
-        bgSprite.setPosition(size.width / 2,  -size.height*1.2);
+        bgSprite.setPosition(size.width / 2, -size.height * 1.2);
 
-        var movebg = cc.MoveBy.create(10, cc.p(0, size.height*3.5));
-        var movebg1 = cc.MoveBy.create(0, cc.p(0, -size.height*3.5));
+        var movebg = cc.MoveBy.create(10, cc.p(0, size.height * 3.5));
+        var movebg1 = cc.MoveBy.create(0, cc.p(0, -size.height * 3.5));
         var bgsequence = cc.Sequence.create(movebg, movebg1);
         bgSprite.runAction(bgsequence).repeatForever();
         this.addChild(bgSprite, ZORDER.BACKGROUND);
-        
+
         bgSprite.setScale(1.0);
 
         this.electricPowerLabel = cc.LabelTTF.create(User.electricPower.getCurrentElectricPower(), "Arial", 80);
@@ -47,34 +47,32 @@ var Board = cc.Layer.extend({
 
         // ToolList
         var toolList = new ToolList();
-        toolList.setPosition(size.width * 1/2, size.height * 2/5);
+        toolList.setPosition(size.width * 1 / 2, size.height * 2 / 5);
         toolList.setVisible(false);
         this.addChild(toolList, ZORDER.TOOL_LIST);
 
         //UI
         var toolListButton = ccui.Button.create("res/ui/menu/menuInActive.png", "res/ui/menu/menuActive.png", "res/ui/menu/menuInActive.png");
-        toolListButton.addTouchEventListener(function(){
+        toolListButton.addTouchEventListener(function () {
             toolList.setVisible(true);
-        }); 
+        });
         toolListButton.setScale(2.0);
-        toolListButton.setPosition(size.width *9/10, size.height * 1/2);
+        toolListButton.setPosition(size.width * 9 / 10, size.height * 1 / 2);
         this.addChild(toolListButton, ZORDER.UI);
 
-        // ActiveItem (Temporary)
-        var activeItem = new ActiveItem("generator");
-        console.log(activeItem.name);
-        activeItem.setListener();
-        activeItem.setPosition(size.width / 10, size.height * 1 / 4);
-        this.addChild(activeItem, ZORDER.ACTIVEITEM, "activeItem");
+        // ActiveItem (Temporary - Needes Refractoring)
+        var generator = new ActiveItem("generator");
+        console.log(generator.name);
+        generator.setListener();
+        generator.setPosition(size.width / 10, size.height * 1 / 4);
+        this.addChild(generator, ZORDER.ACTIVEITEM, "activeItem");
         
-        var ufo = new ActiveItem("ufo");
-        ufo.setVisible(false);
-        ufo.setPosition(size.width * 0.2, size.height * 0.3);
-        this.addChild(ufo, ZORDER.ACTIVEITEM, "activeItem");
-        ActiveItemController.showUfo(this, ufo);
+        //Timer
+        var ufoTimer = new Timer(this, "ufo", 30); // spawn every 120 seconds
+        ufoTimer.setPosition(size.width * 0.1, size.height * 0.7);
+        this.addChild(ufoTimer, ZORDER.ACTIVEITEM, "ufoTimer");
         
-        ufo.setListener(this, ufo);
-
+        
         this.scheduleUpdate();
     },
 
@@ -83,11 +81,13 @@ var Board = cc.Layer.extend({
         this.electricPowerLabel.setString(User.electricPower.getCurrentElectricPower());
         this.checkToolIsChanged();
         this.field.update(delta);
+        
+        TimerController.checkActiveItemSpawnTime(this,this.getChildByName("ufoTimer"));
     },
-
-    checkToolIsChanged : function(){
+    
+    checkToolIsChanged: function () {
         var usingTool = this.getChildByName("usingTool");
-        if(usingTool.name != User.usingTool.name){
+        if (usingTool.name != User.usingTool.name) {
             this.removeChild(usingTool);
             this.addChild(User.usingTool, ZORDER.USING_TOOL, "usingTool");
         }

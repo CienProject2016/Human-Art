@@ -28,8 +28,7 @@ function generatorListener(activeItem) {
     };
 }
 
-function ufoListener(board, ufo) {
-
+function ufoListener(ufo, board, timer) {
     return {
         event: cc.EventListener.TOUCH_ONE_BY_ONE,
         swallowTouches: true,
@@ -54,6 +53,7 @@ function ufoListener(board, ufo) {
         },
         onTouchEnded: function (touch, event) {
             if (ufo.health <= 0) {
+                timer.state = TIMER_STATE.TIMER_HAVE_TO_RESTART;
                 board.removeChild(ufo);
             }
             ufo.setTexture("res/activeItem/" + ufo.name + ".png");

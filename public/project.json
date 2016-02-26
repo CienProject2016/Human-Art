@@ -16,8 +16,10 @@
         "src/model/ElectricPower.js",
         "src/model/Score.js",
         "src/model/Tool.js",
-        "src/model/User.js",     
-        "src/model/ActiveItem.js",   	
+        "src/model/User.js",  
+        "src/model/ActiveItem.js",    
+        "src/model/Timer.js",  	
+        "src/controller/TimerController.js",
         "src/layer/Field.js",
         "src/layer/Board.js",
         "src/main.js"
