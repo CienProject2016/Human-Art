@@ -37,8 +37,8 @@ function absorberListener(ref) {
 
                 ref.setPosition(event._x, event._y);
                 ref.visible = true;
-                
-               
+
+
 
             }
         },
@@ -61,9 +61,9 @@ function absorberListener(ref) {
         }
 
     }, this);
-    
-    
-    
+
+
+
 }
 
 function bombListener(ref) {
@@ -100,34 +100,40 @@ function bombListener(ref) {
 function MinionTouched(minion) {
     var name = User.usingTool.name;
     switch (name) {
-            case "absorber":
-                minion.setScale(1.2);
-                     
-                break;
-             case "bomb":    
-             
-             
-                break;
+        case "absorber":
+            minion.setScale(1.2);
 
-        }   
+            break;
+        case "bomb":
+
+
+            break;
+        case "paralyzer":
+           // minion.stateOfMinion = 2;
+           // console.log(minion.stateOfMinion);
+           minion.paralyze();
+            break;
+    }
 };
 
 function MinionTouchEnded(minion) {
     var name = User.usingTool.name;
     switch (name) {
-            case "absorber":
-           
-            var scalingMinion= cc.ScaleTo.create(0.5,0.7,0.7);
+        case "absorber":
 
-             minion.runAction(scalingMinion);
-               
-                break;
-                 case "bomb":    
-             
-             
-                break;
-                
-                
+            var scalingMinion = cc.ScaleTo.create(0.5, 0.7, 0.7);
 
-        }
+            minion.runAction(scalingMinion);
+
+            break;
+        case "bomb":
+
+
+            break;
+            case "paralyzer":
+            break;
+
+
+
+    }
 };

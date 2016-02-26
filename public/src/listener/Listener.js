@@ -12,14 +12,16 @@ function minionListener(caller) {
             var rect = cc.rect(0, 0, s.width, s.height);
 
             if (cc.rectContainsPoint(rect, locationInNode)) {
-                if (ref.stateOfMinion == 3) {
-                    ref.pause();
+              ref.stop();
+                /*if (ref.stateOfMinion == 1) {
+                    
                 }
-                else if (ref.stateOfMinion == 2){
+                else if (ref.stateOfMinion == 2) {
+                    console.log("aaaaaaa");
                     ref.paralyze();
-                }
+                }*/
                 ref.setOpacity(180);
-               
+
                 MinionTouched(ref);
                 return true;
             }
@@ -57,7 +59,7 @@ function onChangeToolListener(board, toolName) {
             return false;
         },
         onTouchMoved: function (touch, event) {
-            
+
 
         },
         onTouchEnded: function (touch, event) {

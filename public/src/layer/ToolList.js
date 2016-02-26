@@ -1,6 +1,6 @@
 var ToolList = cc.Layer.extend({
     //Javscript는 다차원 배열을 지원하지않음, 따라서 명시적으로 선언해둘 필요가 있음(지울시 undefined에러 발생)
-    toolNameList : [["hand","bomb","absorber"],[undefined,undefined,undefined],[undefined,undefined,undefined],[undefined,undefined,undefined]],
+    toolNameList : [["hand","bomb","absorber"],["paralyzer",undefined,undefined],[undefined,undefined,undefined],[undefined,undefined,undefined]],
     ctor : function(){
         this._super();
         var visibleSize = cc.director.getWinSize();
