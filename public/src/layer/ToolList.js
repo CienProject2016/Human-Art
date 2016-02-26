@@ -67,7 +67,9 @@ function exitButtonListener(toolList){
             var locationInNode = target.convertToNodeSpace(touch.getLocation());
             var s = target.getContentSize();
             var rect = cc.rect(0, 0, s.width, s.height);    
-            if (cc.rectContainsPoint(rect, locationInNode)) {  
+            if (cc.rectContainsPoint(rect, locationInNode)) { 
+                var size = cc.director.getWinSize();
+                toolList.setPosition(-size.width, -size.height);
                 toolList.setVisible(false);
             }
             

@@ -47,13 +47,15 @@ var Board = cc.Layer.extend({
 
         // ToolList
         var toolList = new ToolList();
-        toolList.setPosition(size.width * 1/2, size.height * 2/5);
+        
         toolList.setVisible(false);
+        toolList.setPosition(-size.width, -size.height);
         this.addChild(toolList, ZORDER.TOOL_LIST);
 
         //UI
         var toolListButton = ccui.Button.create("res/ui/menu/menuInActive.png", "res/ui/menu/menuActive.png", "res/ui/menu/menuInActive.png");
         toolListButton.addTouchEventListener(function(){
+            toolList.setPosition(size.width * 1/2, size.height * 2/5);
             toolList.setVisible(true);
         }); 
         toolListButton.setScale(2.0);
