@@ -1,19 +1,16 @@
 var MainLayer = cc.Layer.extend({
     boardLayer: null,
     fieldLayer: null,
-    inventoryLayer: null,
     uiLayer: null,
     ctor: function () {
         this._super();
 
         this.boardLayer = new BoardLayer();
         this.fieldLayer = new FieldLayer("field");
-        this.inventoryLayer = new InventoryLayer();
         this.uiLayer = new UILayer();
 
         this.addChild(this.boardLayer);
         this.addChild(this.fieldLayer);
-        // this.addChild(this.inventoryLayer);
         this.addChild(this.uiLayer);
         
         this.scheduleUpdate();
@@ -21,7 +18,7 @@ var MainLayer = cc.Layer.extend({
     
     update: function (delta) {
         this.fieldLayer.update(delta);
-        this.inventoryLayer.update(delta);
+        this.uiLayer.update(delta);
     },
 });
 
