@@ -11,16 +11,7 @@ function minionListener(caller) {
             var rect = cc.rect(0, 0, s.width, s.height);
 
             if (cc.rectContainsPoint(rect, locationInNode)) {
-                ref.hold = true;
-                if (ref.stateOfMinion == 3) {
-                    ref.pause();
-                }
-                else if (ref.stateOfMinion == 2) {
-                    ref.paralyze();
-                }
-                ref.setOpacity(180);
-
-                minionTouched(ref);
+                ref.grab();
                 return true;
             }
             return false;
@@ -31,10 +22,7 @@ function minionListener(caller) {
             ref.y += delta.y;
         },
         onTouchEnded: function (touch, event) {
-            ref.hold = false;
-            ref.setOpacity(255);
-            ref.heal();
-            minionTouchEnded(ref);
+            ref.release();
         }
     };
 
@@ -51,38 +39,10 @@ function onChangeToolListener(board, toolName) {
             var rect = cc.rect(0, 0, s.width, s.height);
 
             if (cc.rectContainsPoint(rect, locationInNode)) {
-                User.usingTool = new Tool(toolName);
-
+                User.usingTool = toolName;
                 return true;
             }
             return false;
         },
-        onTouchMoved: function (touch, event) {
-        },
-        onTouchEnded: function (touch, event) {
-        }
     };
-};
-
-function minionTouched(minion) {
-    var name = User.usingTool.name;
-    switch (name) {
-        case "absorber":
-            minion.setScale(1.2);
-            break;
-        case "bomb":
-            break;
-    }
-};
-
-function minionTouchEnded(minion) {
-    var name = User.usingTool.name;
-    switch (name) {
-        case "absorber":
-            var scalingMinion = cc.ScaleTo.create(0.5, 0.7, 0.7);
-            minion.runAction(scalingMinion);
-            break;
-        case "bomb":
-            break;
-    }
 };

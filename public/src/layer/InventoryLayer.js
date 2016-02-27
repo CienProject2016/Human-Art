@@ -1,46 +1,88 @@
-/* global User */
-var Inventory = cc.Layer.extend({
-    //Javscript는 다차원 배열을 지원하지않음, 따라서 명시적으로 선언해둘 필요가 있음(지울시 undefined에러 발생)
+var InventoryLayer = cc.Layer.extend({
     row: 4,
     column: 3,
+    toolImageWidth: 240,
+    toolImageHeight: 180,
+    offsetX: cc.director.getWinSize().width * 1 / 2,
+    offsetY: cc.director.getWinSize().height * 2 / 5,
+
     toolNameList: [["hand", "bomb", "absorber"], [null, null, null], [null, null, null], [null, null, null]],
-    toolList: [[null,null,null],[null,null,null],[null,null,null],[null,null,null]],
+
     ctor: function () {
         this._super();
         var winSize = cc.director.getWinSize();
+
         var toolList = cc.Sprite.create("res/ui/tool/toolList.png");
         var exitButton = cc.Sprite.create("res/ui/tool/exitButton.png");
-        toolList.setPosition(winSize.width * 0.1, winSize.height * 0.1);
-        exitButton.setPosition(winSize.width * 0.28, winSize.height * 0.48);
+
+        toolList.setPosition(winSize.width * 0.1 + this.offsetX, winSize.height * 0.1 + this.offsetY);
+        exitButton.setPosition(winSize.width * 0.28 + this.offsetX, winSize.height * 0.48 + this.offsetY);
         cc.eventManager.addListener(cc.EventListener.create(exitButtonListener(this)), exitButton);
+
         this.addChild(toolList);
         this.addChild(exitButton);
 
         for (var i = 0; i < this.row; i++) {
             for (var j = 0; j < this.column; j++) {
                 if (this.toolNameList[i][j]) {
-                    
                     this.addTool(this.toolNameList[i][j], i, j);
                 }
             }
         }
+
+        this.setVisible(false);
     },
+
     addTool: function (name, i, j) {
         var winSize = cc.director.getWinSize();
         var toolImage = cc.Sprite.create("res/tools/" + this.toolNameList[i][j] + ".png");
-        toolImage.setPosition(-winSize.width * 0.034 + winSize.width * 0.133 * j, winSize.height * 0.32 - winSize.height * 0.175 * i);
+        var scaleFactorX = (this.toolImageWidth) / toolImage.getContentSize().width;
+        var scaleFactorY = (this.toolImageHeight) / toolImage.getContentSize().height;
+        var scaleFactor = (scaleFactorX < scaleFactorY) ? scaleFactorX : scaleFactorY;
+        
+        toolImage.setScale(scaleFactor, scaleFactor);
+        toolImage.setPosition(-winSize.width * 0.034 + winSize.width * 0.133 * j + this.offsetX, winSize.height * 0.32 - winSize.height * 0.175 * i + this.offsetY);
         this.addChild(toolImage);
-        cc.eventManager.addListener(cc.EventListener.create(chooseToolListener(this.toolNameList[i][j])), toolImage);
     },
-    getTool: function(name) {
+
+    selectTool: function (toolName) {
+        User.usingTool = toolName;
+    },
+
+    onEnter: function () {
+        cc.eventManager.addListener({
+            event: cc.EventListener.TOUCH_ONE_BY_ONE,
+            swallowTouches: true,
+            onTouchBegan: this.onTouchBegan,
+            onTouchMoved: this.onTouchMoved,
+            onTouchEnded: this.onTouchEnded,
+        }, this);
+    },
+
+    onTouchBegan: function (touch, event) {
+        var winSize = cc.director.getWinSize();
+
+        var target = event.getCurrentTarget();
+        var locationInNode = target.convertToNodeSpace(touch.getLocation());
+
         for (var i = 0; i < this.row; i++) {
             for (var j = 0; j < this.column; j++) {
-                if (this.toolNameList[i][j] == name) {
-                    return this.toolList[i][j];
+                var rect = cc.rect(-winSize.width * 0.034 + winSize.width * 0.133 * j + this.offsetX, winSize.height * 0.32 - winSize.height * 0.175 * i + this.offsetY, this.toolImageWidth, this.toolImageHeight);
+                if (cc.rectContainsPoint(rect, locationInNode)) {
+                    this.selectTool(this.toolNameList[i][j]);
+                    return true;
                 }
             }
         }
-        return null;
+
+        return false;
+    },
+
+    onTouchMoved: function (touch, event) {
+    },
+
+    onTouchEnded: function (touch, event) {
+
     }
 });
 

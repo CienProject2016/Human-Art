@@ -1,7 +1,7 @@
 var Component = cc.Node.extend({
     ref: null,
-    stateOfMinion: 2,
-    hold: false,
+    owner: null,
+    paralyzed: false,
     ctor: function (type) {
         this._super();
         this.ref = this;
@@ -53,12 +53,19 @@ var Component = cc.Node.extend({
         cc.eventManager.addListener(minionListener(this), this.getRightLegSprite());
         cc.eventManager.addListener(minionListener(this), this.getHeadSprite());
     },
-    temporalActions: null,
-    paralyze: function () {
-        this.temporalActions = this.getActionManager().pauseTarget(this.ref);
+    grab: function () {
+        if (this.owner != null) {
+
+        }
+        else {
+            if (this.paralyzed) {
+                this.temporalAction = this.getActionManager().pauseTarget(this.children[0]);
+            }
+            this.pause();
+        }
     },
-    heal: function () {
+    release: function() {
         this.resume();
-        this.getActionManager().resumeTargets(this.temporalActions);
+        this.getActionManager().resumeTarget(this.children[0]);
     }
 });

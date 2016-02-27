@@ -10,7 +10,7 @@ var User = (function(){
     this.id = null,
     this.session = null,
     this.electricPower = new ElectricPower(100),
-    this.usingTool = new Tool("hand"),
+    this.usingTool = "hand",
     this.score = new Score(0)
     return instance;
 })();

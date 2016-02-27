@@ -1,27 +1,31 @@
-var Tool = cc.Sprite.extend({
-    requiredElectricPower: null,
-    name: "",
+var Tool = function(name) {
+    
+}
 
-    ctor: function (name) {
-        console.log("new tool: " + name);
-        this._super("res/tools/" + name + ".png");
-        this.name = name;
+// var Tool = cc.Sprite.extend({
+//     requiredElectricPower: null,
+//     name: "",
 
-        this.setListener(name);
-    },
+//     ctor: function (name) {
+//         console.log("new tool: " + name);
+//         this._super("res/tools/" + name + ".png");
+//         this.name = name;
 
-    setListener: function (name) {
-        switch (name) {
-            case "hand":
-                cc.eventManager.addListener(handListener(this), this);
-                break;
-            case "absorber":
-                cc.eventManager.addListener(absorberListener(this), this);
-                break;
-            case "bomb":
-                cc.eventManager.addListener(bombListener(this), this);
-                break;
-        }
+//         this.setListener(name);
+//     },
 
-    }
-});
+//     setListener: function (name) {
+//         switch (name) {
+//             case "hand":
+//                 cc.eventManager.addListener(handListener(this), this);
+//                 break;
+//             case "absorber":
+//                 cc.eventManager.addListener(absorberListener(this), this);
+//                 break;
+//             case "bomb":
+//                 cc.eventManager.addListener(bombListener(this), this);
+//                 break;
+//         }
+
+//     }
+// });

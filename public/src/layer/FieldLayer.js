@@ -1,4 +1,4 @@
-var Field = cc.Layer.extend({
+var FieldLayer = cc.Layer.extend({
     minionNum: 0,
     minions: [],
 
@@ -41,6 +41,7 @@ var Field = cc.Layer.extend({
             this.addChild(newMinion);
         }
     },
+    
     update: function (delta) {
         this.minions.forEach(function (minion) {
             var p = minion.getPosition();
@@ -67,6 +68,7 @@ var Field = cc.Layer.extend({
             }
         })
     },
+    
     makeRandomMove: function (x, y) {
         var size = cc.director.getWinSize();
         var speed1 = Math.floor((Math.random() * 5 + 5));
@@ -77,9 +79,11 @@ var Field = cc.Layer.extend({
         var movement3 = cc.MoveBy.create(speed3, cc.p(x, y));
         return cc.Sequence.create(movement1, movement2, movement3);
     },
+    
     getMinion: function (i) {
         return this.minions[i];
     },
+    
     getMinionsNum: function () {
         return this.minions.length;
     }

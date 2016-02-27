@@ -1,16 +1,14 @@
 /* global ZORDER */
-var Board = cc.Layer.extend({
+var BoardLayer = cc.Layer.extend({
     id: null,
     name: null,
     electricPowerLabel: 0,
     usingToolImage: null,
-    field: null,
-    ui: null,
     ctor: function (boardId) {
         this._super();
         this.init(boardId);
     },
-    makeBackground: function() {
+    makeBackground: function () {
         var size = cc.director.getWinSize();
         var bgSprite = cc.Sprite.create("res/images/colorbg.jpg");
         bgSprite.setPosition(size.width / 2, -size.height * 1.2);
@@ -23,33 +21,25 @@ var Board = cc.Layer.extend({
         return bgSprite;
     },
     init: function (boardId) {
-        this._super();
         this.id = boardId;
-        var size = cc.director.getWinSize();
-        
+
         this.addChild(this.makeBackground(), ZORDER.BACKGROUND);
         
-        // Field
-        this.field = new Field("field");
-        this.addChild(this.field, ZORDER.FIELD);
+        // this.field = new FieldLayer("field");
+        // this.addChild(this.field, ZORDER.FIELD);
+
+        // this.inventory = new InventoryLayer();
+        // // this.inventory.setVisible(false);
+        // this.addChild(this.inventory, ZORDER.UI);
         
-        // UI
-        this.ui = new UI();
-        this.addChild(this.ui, ZORDER.UI);
-
-        // ActiveItem (Temporary)
-        var activeItem = new ActiveItem("generator");
-        console.log(activeItem.name);
-        activeItem.setListener();
-        activeItem.setPosition(size.width / 10, size.height * 1 / 4);
-        this.addChild(activeItem, ZORDER.ACTIVEITEM, "activeItem");
-
-        this.scheduleUpdate();
+        // this.ui = new UILayer();
+        // this.addChild(this.ui, ZORDER.UI);
+        
     },
+    
     update: function (delta) {
-        this.ui.update(delta);
-        this.field.update(delta);
     },
+    
     onEnter: function () {
         this._super();
         cc.eventManager.addListener({
@@ -60,19 +50,14 @@ var Board = cc.Layer.extend({
             onTouchEnded: this.onTouchEnded,
         }, this);
     },
+    
     onTouchBegan: function (touch, event) {
         return false;
     },
+    
     onTouchMoved: function (touch, event) {
     },
+    
     onTouchEnded: function (touch, event) {
     },
 });
-
-Board.scene = function (boardId) {
-    var scene = new cc.Scene;
-    var board = new Board(boardId);
-    scene.addChild(board);
-
-    return scene;
-};
