@@ -8,20 +8,22 @@ var InventoryLayer = cc.Layer.extend({
     offsetX: cc.director.getWinSize().width * 1 / 2,
     offsetY: cc.director.getWinSize().height * 2 / 5,
 
-    toolNameList: [["hand", "bomb", "absorber"], [null, null, null], [null, null, null], [null, null, null]],
+    moving: false,
+
+    toolNameList: [["hand", "bomb", "absorber"], ["paralyzer", null, null], [null, null, null], [null, null, null]],
 
     ctor: function () {
         this._super();
         var winSize = cc.director.getWinSize();
 
-        var toolList = cc.Sprite.create("res/ui/tool/toolList.png");
+        var inventoryFrame = cc.Sprite.create("res/ui/tool/toolList.png");
         var exitButton = cc.Sprite.create("res/ui/tool/exitButton.png");
 
-        toolList.setPosition(winSize.width * 0.1 + this.offsetX, winSize.height * 0.1 + this.offsetY);
+        inventoryFrame.setPosition(winSize.width * 0.1 + this.offsetX, winSize.height * 0.1 + this.offsetY);
         exitButton.setPosition(winSize.width * 0.28 + this.offsetX, winSize.height * 0.48 + this.offsetY);
         cc.eventManager.addListener(cc.EventListener.create(exitButtonListener(this)), exitButton);
 
-        this.addChild(toolList);
+        this.addChild(inventoryFrame);
         this.addChild(exitButton);
 
         for (var i = 0; i < this.row; i++) {
@@ -78,10 +80,9 @@ var InventoryLayer = cc.Layer.extend({
     onTouchBegan: function (touch, event) {
         if (!this.visible) return false;
 
-        var winSize = cc.director.getWinSize();
-
         var target = event.getCurrentTarget();
-        var locationInNode = touch.getLocation();
+        var locationInNode = target.convertToNodeSpace(touch.getLocation());
+
 
         if (this.isInsideInventory(locationInNode)) {
             for (var i = 0; i < this.row; i++) {
@@ -90,11 +91,14 @@ var InventoryLayer = cc.Layer.extend({
                     var leftRightPosition = cc.pSub(this.getToolPosition(i, j), offset);
                     var rect = cc.rect(leftRightPosition.x, leftRightPosition.y, this.INVENTORY_TOOL_IMAGE_WIDTH, this.INVENTORY_TOOL_IMAGE_HEIGHT);
                     if (cc.rectContainsPoint(rect, locationInNode)) {
-                        this.selectTool(this.toolNameList[i][j]);
+                        if (this.toolNameList[i][j]) {
+                            this.selectTool(this.toolNameList[i][j]);
+                            return true;
+                        }
                     }
                 }
             }
-
+            this.moving = true;
             return true;
         }
 
@@ -102,10 +106,16 @@ var InventoryLayer = cc.Layer.extend({
     },
 
     onTouchMoved: function (touch, event) {
+        if (this.moving) {
+            var delta = touch.getDelta();
+            this.x += delta.x;
+            this.y += delta.y;
+        }
     },
 
     onTouchEnded: function (touch, event) {
-
+        if (this.moving) 
+            this.moving = false;
     }
 });
 

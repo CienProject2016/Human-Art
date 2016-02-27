@@ -3,6 +3,8 @@ var UILayer = cc.Layer.extend({
     CURRENT_TOOL_IMAGE_HEIGHT: 150,
     RECENT_TOOL_IMAGE_WIDTH: 150,
     RECENT_TOOL_IMAGE_HEIGHT: 150,
+    
+    electricPowerLabel: null,
 
     inventoryLayer: null,
 
@@ -17,6 +19,7 @@ var UILayer = cc.Layer.extend({
         this.makeRecentToolList();
         this.makeCurrentTool();
         this.makeInventory();
+        this.makeElectricPowerDisplay();
     },
 
     update: function (detla) {
@@ -24,6 +27,7 @@ var UILayer = cc.Layer.extend({
             this.updateCurrentTool(User.usingTool);
             this.updateRecentToolList(User.usingTool);
         }
+        this.updateElectricPowerDisplay(User.electricPower.getCurrentElectricPower());
     },
 
     updateCurrentTool: function (toolName) {
@@ -43,10 +47,17 @@ var UILayer = cc.Layer.extend({
             this.recentToolNameList.push(toolName);
 
             for (var i = 0; i < this.recentToolNameList.length; i++) {
-                this.recentToolImageList[i] = this.getScaledRecentToolSprite(this.recentToolNameList[i]);
+                this.recentToolImageList[i].setTexture("res/tools/" + this.recentToolNameList[i] + ".png");
+                var scaleFactor = this.getScaleFactorSmall(this.recentToolImageList[i].getContentSize().width, this.recentToolImageList[i].getContentSize().height,
+                    this.RECENT_TOOL_IMAGE_WIDTH, this.RECENT_TOOL_IMAGE_HEIGHT);
+                this.recentToolImageList[i].setScale(scaleFactor, scaleFactor);
                 this.recentToolImageList[i].setPosition(cc.p(winSize.width * (7 + i) / 10, winSize.height * 3 / 19));
             }
         }
+    },
+
+    updateElectricPowerDisplay: function (power) {
+        this.electricPowerLabel.setString(power+"");
     },
 
     makeInventory: function () {
@@ -99,6 +110,13 @@ var UILayer = cc.Layer.extend({
         }
     },
 
+    makeElectricPowerDisplay: function () {
+        var winSize = cc.director.getWinSize();
+        this.electricPowerLabel = cc.LabelTTF.create(User.electricPower.getCurrentElectricPower(), "Arial", 80);
+        this.electricPowerLabel.setPosition(winSize.width / 10, winSize.height * 14 / 15);
+        this.addChild(this.electricPowerLabel, ZORDER.UI);
+    },
+
     getScaleFactorSmall: function (origWidth, origHeight, targetWidth, targetHeight) {
         var scaleFactorX = targetWidth / origWidth;
         var scaleFactorY = targetHeight / origHeight;
@@ -131,8 +149,10 @@ function recentToolListener(ref) {
             if (cc.rectContainsPoint(rect, locationInNode)) {
                 for (var i = 0; i < smallRects.length; i++) {
                     if (cc.rectContainsPoint(smallRects[i], locationInNode)) {
-                        User.usingTool = ref.recentToolNameList[i];
-                        ref.updateCurrentTool(ref.recentToolNameList[i])
+                        if (ref.recentToolNameList[i]) {
+                            User.usingTool = ref.recentToolNameList[i];
+                            ref.updateCurrentTool(ref.recentToolNameList[i])
+                        }
                         return true;
                     }
                 }

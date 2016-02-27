@@ -1,10 +1,9 @@
 var ZORDER = {
-    "BACKGROUND": 0,
-    "ACTIVEITEM": 1,
-    "FIELD": 1,
-    "UI": 2,
-    "INVENTORY": 2,
-    "TOOL_LIST" : 3,
-    "CURSOR": 4,
-    "USING_TOOL" :5
+    "BOARD": 1,
+    "FIELD": 2,
+    "ACTIVEITEM": 3,
+    "UI": 4,
+    "INVENTORY": 5,
+    "CURSOR": 6,
+    "USING_TOOL" :7
 }

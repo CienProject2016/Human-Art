@@ -2,24 +2,23 @@ var MainLayer = cc.Layer.extend({
     boardLayer: null,
     fieldLayer: null,
     uiLayer: null,
+
     ctor: function () {
         this._super();
 
-        this.boardLayer = new BoardLayer();
-        this.fieldLayer = new FieldLayer("field");
+        this.boardLayer = new BoardLayer("field");
         this.uiLayer = new UILayer();
 
         this.addChild(this.boardLayer);
-        this.addChild(this.fieldLayer);
-        this.addChild(this.uiLayer);
-        
+        this.addChild(this.uiLayer, ZORDER.UI);
+
         this.scheduleUpdate();
     },
-    
+
     update: function (delta) {
-        this.fieldLayer.update(delta);
+        this.boardLayer.update(delta);
         this.uiLayer.update(delta);
-    },
+    }
 });
 
 MainLayer.scene = function (boardId) {

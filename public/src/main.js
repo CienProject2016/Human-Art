@@ -1,7 +1,8 @@
 var g_mainmenu = [
     "res/minions/skeleton2.json", "res/minions/horse.json", "res/minions/skeleton1.json", "res/ui/item.json", 
     "res/music/charge.wav", 
-    "res/tools/hand.png", "res/tools/bomb.png", "res/tools/absorber.png"
+    "res/tools/hand.png", "res/tools/bomb.png", "res/tools/absorber.png", "res/tools/paralyzer.png",
+    "res/images/field_background.jpg", "res/images/colorbg.jpg",
 ]
 
 cc.game.onStart = function () {

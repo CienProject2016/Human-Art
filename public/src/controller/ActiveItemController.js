@@ -1,15 +1,15 @@
-var ActiveItemController = (function(){
+var ActiveItemController = (function () {
     var instance;
-    ActiveItemController = function ActiveItemController(){
+    ActiveItemController = function ActiveItemController() {
         return instance;
     };
-    ActiveItemController.prototype =this;
+    ActiveItemController.prototype = this;
     instance = new ActiveItemController();
     instance.constructor = ActiveItemController();
-    
-    this.setElectricPower = function(electricPower){
+
+    this.setElectricPower = function (electricPower) {
         var currentElectricPower = User.electricPower.getCurrentElectricPower();
-        User.electricPower.setCurrentElectricPower(currentElectricPower+electricPower);
+        User.electricPower.setCurrentElectricPower(currentElectricPower + electricPower);
     };
     return instance;
 })();

@@ -2,6 +2,7 @@ var Component = cc.Node.extend({
     ref: null,
     owner: null,
     paralyzed: false,
+
     ctor: function (type) {
         this._super();
         this.ref = this;
@@ -24,6 +25,49 @@ var Component = cc.Node.extend({
 
         return true;
     },
+
+    addListener: function (listener) {
+        cc.eventManager.addListener(listener(this), this.getBodySprite());
+        cc.eventManager.addListener(listener(this), this.getLeftArmSprite());
+        cc.eventManager.addListener(listener(this), this.getRightArmSprite());
+        cc.eventManager.addListener(listener(this), this.getLeftLegSprite());
+        cc.eventManager.addListener(listener(this), this.getRightLegSprite());
+        cc.eventManager.addListener(listener(this), this.getHeadSprite());
+    },
+
+    addFreeListener: function () {
+        this.addListener(minionListener);
+    },
+
+    grab: function () {
+        if (this.owner != null) {
+
+        }
+        else {
+            if (this.paralyzed) {
+                this.getActionManager().pauseTarget(this.children[0]);
+            }
+            this.pause();
+        }
+    },
+
+    release: function () {
+        if (this.isOnBoard()) {
+            if (!this.paralyzed) {
+                this.getActionManager().resumeTarget(this.children[0]);
+            }
+        }
+        else {
+            this.resume();
+            this.getActionManager().resumeTarget(this.children[0]);
+        }
+    },
+
+    isOnBoard: function () {
+        var fieldHeight = 200;
+        return this.getPosition().y > fieldHeight;
+    },
+
     getBodyBone: function () {
         return this.ref.children[0].children[0];
     },
@@ -45,29 +89,6 @@ var Component = cc.Node.extend({
     getHeadSprite: function () {
         return this.getBodyBone().children[4].children[0];
     },
-    addListener: function (listener) {
-        cc.eventManager.addListener(minionListener(this), this.getBodySprite());
-        cc.eventManager.addListener(minionListener(this), this.getLeftArmSprite());
-        cc.eventManager.addListener(minionListener(this), this.getRightArmSprite());
-        cc.eventManager.addListener(minionListener(this), this.getLeftLegSprite());
-        cc.eventManager.addListener(minionListener(this), this.getRightLegSprite());
-        cc.eventManager.addListener(minionListener(this), this.getHeadSprite());
-    },
-    grab: function () {
-        if (this.owner != null) {
-
-        }
-        else {
-            if (this.paralyzed) {
-                this.temporalAction = this.getActionManager().pauseTarget(this.children[0]);
-            }
-            this.pause();
-        }
-    },
-    release: function() {
-        this.resume();
-        this.getActionManager().resumeTarget(this.children[0]);
-    }
 });
 
 function minionListener(ref) {
@@ -96,5 +117,4 @@ function minionListener(ref) {
             ref.release();
         }
     };
-
 }

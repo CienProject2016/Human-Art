@@ -1,63 +1,110 @@
-/* global ZORDER */
 var BoardLayer = cc.Layer.extend({
-    id: null,
-    name: null,
-    electricPowerLabel: 0,
-    usingToolImage: null,
-    ctor: function (boardId) {
-        this._super();
-        this.init(boardId);
-    },
-    makeBackground: function () {
-        var size = cc.director.getWinSize();
-        var bgSprite = cc.Sprite.create("res/images/colorbg.jpg");
-        bgSprite.setPosition(size.width / 2, -size.height * 1.2);
+    minionNum: 0,
+    minions: [],
 
-        var movebg = cc.MoveBy.create(10, cc.p(0, size.height * 3.5));
-        var movebg1 = cc.MoveBy.create(0, cc.p(0, -size.height * 3.5));
+    ctor: function (fieldId) {
+        this._super();
+        cc.loader.loadJson("res/json/" + fieldId + ".json", this.init.bind(this));
+    },
+
+    init: function (error, data) {
+        if (error) console.log(error);
+        else this.minionNum = data.minionNum;
+
+        this.addChild(this.makeBoardBackground(), ZORDER.BOARD);
+        this.addChild(this.makeFieldBackground(), ZORDER.FIELD);
+
+        for (var i = 0; i < this.minionNum; i++) {
+            var type = Math.floor(Math.random() * data.minionNameList.length);
+            var newMinion = this.makeRandomMinion(data.minionNameList[type]);
+
+            this.minions.push(newMinion);
+            this.addChild(newMinion, ZORDER.FIELD);
+        }
+    },
+
+    update: function (delta) {
+        this.minions.forEach(function (minion) {
+            var p = minion.getPosition();
+            if (!minion.tempAction && !minion.owner) {
+                if (p.y > 200) {
+                    minion.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(0, 100 - p.y)));
+                }
+                else if (p.y < 0) {
+                    minion.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(0, 100 - p.y)));
+                }
+                if (p.x > cc.director.getWinSize().width) {
+                    minion.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(cc.director.getWinSize().width - p.x, 0)));
+                }
+                else if (p.x < 0) {
+                    minion.tempAction = minion.runAction(cc.moveBy(0.5, cc.p(-p.x, 0)));
+                }
+            }
+            else {
+                if (minion.tempAction) {
+                    if (minion.tempAction.isDone()) {
+                        minion.tempAction = null;
+                    }
+                }
+            }
+        })
+    },
+
+    makeBoardBackground: function () {
+        var winSize = cc.director.getWinSize();
+        var bgSprite = cc.Sprite.create("res/images/colorbg.jpg");
+        bgSprite.setPosition(winSize.width / 2, -winSize.height * 1.2);
+
+        var movebg = cc.MoveBy.create(10, cc.p(0, winSize.height * 3.5));
+        var movebg1 = cc.MoveBy.create(0, cc.p(0, -winSize.height * 3.5));
         var bgsequence = cc.Sequence.create(movebg, movebg1);
         bgSprite.runAction(bgsequence).repeatForever();
         bgSprite.setScale(1.0);
         return bgSprite;
     },
-    init: function (boardId) {
-        this.id = boardId;
 
-        this.addChild(this.makeBackground(), ZORDER.BACKGROUND);
-        
-        // this.field = new FieldLayer("field");
-        // this.addChild(this.field, ZORDER.FIELD);
+    makeFieldBackground: function () {
+        var fieldBG = cc.Sprite.create("res/images/field_background.jpg");
+        fieldBG.setAnchorPoint(0, 0);
+        fieldBG.setPosition(0, 0);
+        return fieldBG;
+    },
 
-        // this.inventory = new InventoryLayer();
-        // // this.inventory.setVisible(false);
-        // this.addChild(this.inventory, ZORDER.UI);
-        
-        // this.ui = new UILayer();
-        // this.addChild(this.ui, ZORDER.UI);
-        
+    makeRandomMinion: function (type) {
+        var winSize = cc.director.getWinSize();
+        var minionHeight = 150;
+
+        var minion = new Component(type);
+        var x = Math.floor(Math.random() * winSize.width);
+        var y = Math.floor((Math.random() * winSize.height / 10) + winSize.height / 50);
+
+        minion.setPosition(x, y);
+        minion.setAnchorPoint(0, 0);
+        var minionRealWidth = minion.getContentSize().width;
+        var minionRealHeight = minion.getContentSize().height;
+        minion.children[0].setScale((minionHeight / minionRealWidth) / minionRealHeight * minionRealWidth, minionHeight / minionRealHeight);
+        minion.runAction(this.makeRandomMove(x, y)).repeatForever();
+        minion.addFreeListener();
+
+        return minion;
     },
-    
-    update: function (delta) {
+
+    makeRandomMove: function (x, y) {
+        var size = cc.director.getWinSize();
+        var speed1 = Math.floor((Math.random() * 5 + 5));
+        var speed2 = (size.width - x) / size.width * speed1
+        var speed3 = x / size.width * speed1;
+        var movement1 = cc.MoveBy.create(speed2, cc.p(size.width - x, y));
+        var movement2 = cc.MoveBy.create(speed1, cc.p(-size.width, -y));
+        var movement3 = cc.MoveBy.create(speed3, cc.p(x, y));
+        return cc.Sequence.create(movement1, movement2, movement3);
     },
-    
-    onEnter: function () {
-        this._super();
-        cc.eventManager.addListener({
-            event: cc.EventListener.TOUCH_ONE_BY_ONE,
-            swallowTouches: true,
-            onTouchBegan: this.onTouchBegan,
-            onTouchMoved: this.onTouchMoved,
-            onTouchEnded: this.onTouchEnded,
-        }, this);
+
+    getMinion: function (i) {
+        return this.minions[i];
     },
-    
-    onTouchBegan: function (touch, event) {
-        return false;
-    },
-    
-    onTouchMoved: function (touch, event) {
-    },
-    
-    onTouchEnded: function (touch, event) {
-    },
+
+    getMinionsNum: function () {
+        return this.minions.length;
+    }
 });

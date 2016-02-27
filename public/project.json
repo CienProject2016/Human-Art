@@ -17,7 +17,6 @@
         "src/model/ActiveItem.js",
         "src/layer/UILayer.js",   	
         "src/layer/InventoryLayer.js",
-        "src/layer/FieldLayer.js",
         "src/layer/BoardLayer.js",
         "src/layer/MainLayer.js",
         "src/main.js"
